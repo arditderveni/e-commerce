@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "../ui/button";
-import useCartContext from "@/hooks/use-cart-context";
+import { useCartContext } from "@/hooks";
 
 const ClearCartButton = () => {
   const { clearCart } = useCartContext();

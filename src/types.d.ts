@@ -34,6 +34,7 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import * as SwitchPrimitives from "@radix-ui/react-switch";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import * as SelectPrimitive from "@radix-ui/react-select";
+import useEmblaCarousel, { UseEmblaCarouselType } from "embla-carousel-react";
 
 declare global {
   //#region Common Types
@@ -64,6 +65,7 @@ declare global {
     image: string;
     colors?: string[];
     sizes: Size[];
+    wishListed: boolean;
   };
 
   type SizeTypes = "S" | "M" | "L" | "";
@@ -71,6 +73,17 @@ declare global {
   type Size = {
     size: SizeTypes;
     stock: number;
+  };
+
+  type FooterColumn = {
+    title: string;
+    links: { title: string; href: string }[];
+  };
+
+  type Brand = {
+    name: string;
+    image?: string;
+    slug: string;
   };
 
   //#endregion
@@ -92,6 +105,11 @@ declare global {
   type ColorPaletteRef = RefObject<{
     color: string;
     setColor: (color: string) => void;
+  }>;
+
+  type WishHeartRef = RefObject<{
+    wishListed: boolean;
+    setWishListed: (value: boolean) => void;
   }>;
 
   //#endregion
@@ -194,6 +212,8 @@ declare global {
     className?: string;
     id: string;
     ref?: RefObject<HTMLDivElement>;
+    wishListed: boolean;
+    variant: "home" | "shop";
     addItem: (item: CartItem) => void;
   }
 
@@ -231,6 +251,39 @@ declare global {
       quantity: number;
       setQuantity: (quantity: number) => void;
     }>;
+  }
+
+  interface BannerProps {
+    className?: string;
+    image?: string;
+    text?: string;
+    button?: boolean;
+    buttonText?: string;
+    path?: string;
+  }
+
+  interface RedirectButtonProps {
+    route: string;
+    title: string;
+    className?: string;
+  }
+
+  interface WishHeartProps {
+    wishListed: boolean;
+    className?: string;
+    ref?: WishHeartRef;
+  }
+
+  interface FooterColumnProps {
+    column: FooterColumn;
+    className?: string;
+  }
+
+  interface HoverCardProps {
+    text: string;
+    children?: ReactNode;
+    hoverChildren?: ReactNode;
+    className?: string;
   }
 
   //#endregion
@@ -766,6 +819,90 @@ declare global {
       };
 
   type CartReducer = (state: CartState, action: CartReducerAction) => CartState;
+
+  //#endregion
+
+  //* ---------- */
+
+  //#region Breadcrumb Props
+
+  interface BreadcrumbItemProps extends ComponentPropsWithoutRef<"li"> {
+    ref?: RefObject<HTMLLIElement>;
+    className?: string;
+  }
+
+  interface BreadcrumbLinkProps extends ComponentPropsWithoutRef<"a"> {
+    ref?: RefObject<HTMLAnchorElement>;
+    className?: string;
+    asChild?: boolean;
+  }
+
+  interface BreadcrumbListProps extends ComponentPropsWithoutRef<"ol"> {
+    ref?: RefObject<HTMLOListElement>;
+    className?: string;
+  }
+
+  interface BreadcrumbPageProps extends ComponentPropsWithoutRef<"span"> {
+    ref?: RefObject<HTMLSpanElement>;
+    className?: string;
+  }
+
+  interface BreadcrumbProps extends ComponentPropsWithoutRef<"nav"> {
+    ref?: RefObject<HTMLElement>;
+    separator?: ReactNode;
+  }
+
+  //#endregion
+
+  //* ---------- */
+
+  //#region Carousel
+
+  type CarouselApi = UseEmblaCarouselType[1];
+  type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
+  type CarouselOptions = UseCarouselParameters[0];
+  type CarouselPlugin = UseCarouselParameters[1];
+
+  type CarouselProps = {
+    opts?: CarouselOptions;
+    plugins?: CarouselPlugin;
+    orientation?: "horizontal" | "vertical";
+    setApi?: (api: CarouselApi) => void;
+  };
+
+  interface CarouselCompProps
+    extends HTMLAttributes<HTMLDivElement>,
+      CarouselProps {
+    ref?: RefObject<HTMLDivElement>;
+  }
+
+  interface Carousel extends CarouselCompProps {
+    items: ReactNode[];
+    itemClassName?: string;
+  }
+
+  interface CarouselContentProps extends HTMLAttributes<HTMLDivElement> {
+    className?: string;
+    ref?: RefObject<HTMLDivElement>;
+  }
+
+  interface CarouselItemProps extends HTMLAttributes<HTMLDivElement> {
+    className?: string;
+    ref?: RefObject<HTMLDivElement>;
+  }
+
+  interface CarouselButtonProps extends ComponentProps<typeof Button> {
+    ref?: RefObject<HTMLButtonElement>;
+  }
+
+  type CarouselContextProps = {
+    carouselRef: ReturnType<typeof useEmblaCarousel>[0];
+    api: ReturnType<typeof useEmblaCarousel>[1];
+    scrollPrev: () => void;
+    scrollNext: () => void;
+    canScrollPrev: boolean;
+    canScrollNext: boolean;
+  } & CarouselProps;
 
   //#endregion
 }

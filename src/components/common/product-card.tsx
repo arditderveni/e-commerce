@@ -5,14 +5,19 @@ import {
   Card as CardComponent,
   CardContent,
   CardFooter,
-} from "@/components/ui/card";
+  Button,
+  CardHeader,
+} from "@/components/ui";
 import { FC, useCallback, useRef } from "react";
-import ColorPalette from "./color-palette";
+import {
+  ColorPalette,
+  StarRating,
+  SizePicker,
+  QuantityButton,
+  WishHeart,
+} from ".";
 import Image from "next/image";
-import StarRating from "./star-rating";
-import SizePicker from "./size-picker";
-import QuantityButton from "./quantity-button";
-import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const ProductCard: FC<ProductCardProps> = ({
   name,
@@ -23,6 +28,8 @@ const ProductCard: FC<ProductCardProps> = ({
   className,
   ref,
   id,
+  wishListed = false,
+  variant,
   addItem,
 }) => {
   const starRatingRef = useRef({
@@ -53,8 +60,16 @@ const ProductCard: FC<ProductCardProps> = ({
     },
   });
 
+  const heartRef: WishHeartRef = useRef({
+    wishListed,
+    setWishListed: (wishListed) => {
+      console.log("WishListed : ", wishListed);
+    },
+  });
+
   const handleAddToCart = useCallback(() => {
     if (!quantityButtonRef.current.quantity) {
+      toast.info("Please select quantity");
       return;
     }
 
@@ -75,7 +90,13 @@ const ProductCard: FC<ProductCardProps> = ({
       ref={ref}
       className={cn("border-1 border-product-border", className)}
     >
-      <CardContent>
+      <CardHeader className="border-none justify-between align-middle">
+        {name}
+        {variant === "shop" ? (
+          <WishHeart wishListed={wishListed} ref={heartRef} />
+        ) : null}
+      </CardHeader>
+      <CardContent className="w-full">
         <Image src={image} alt={name} width={300} height={300} />
         <div className="flex align-middle justify-between">
           {colors && (
@@ -85,7 +106,7 @@ const ProductCard: FC<ProductCardProps> = ({
               ref={colorRef}
             />
           )}
-          <StarRating rating={4} ratable={false} ref={starRatingRef} />
+          <StarRating rating={4} ratable={true} ref={starRatingRef} />
           <div>${price}</div>
         </div>
       </CardContent>

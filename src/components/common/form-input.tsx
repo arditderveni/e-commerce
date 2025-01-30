@@ -7,7 +7,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { DynamicInput } from ".";
+import { DynamicInput } from "./";
 import { FieldValues, Path } from "react-hook-form";
 
 const FormInput = <T extends FieldValues>({

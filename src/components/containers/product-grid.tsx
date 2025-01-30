@@ -1,17 +1,21 @@
 "use client";
 
 import React from "react";
-import GridContainer from "../layout/grid-container";
-import ProductCard from "../common/product-card";
+import { GridContainer } from "../layout";
+import { ProductCard } from "../common";
 import { cn } from "@/lib/utils";
-import useCartContext from "@/hooks/use-cart-context";
+import { useCartContext } from "@/hooks";
+import HomeProductCard from "../common/home-product-card";
+
 interface Props {
   className?: string;
+  variant: "home" | "shop";
 }
 
-const ProductGrid: React.FC<Props> = ({ className }) => {
+const ProductGrid: React.FC<Props> = ({ className, variant }) => {
   const { addItem } = useCartContext();
 
+  //@ts-expect-error - This is a mock data
   const products: Product[] = [
     {
       id: "1",
@@ -24,6 +28,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 10 },
         { size: "L", stock: 5 },
       ],
+      wishListed: true,
     },
     {
       id: "2",
@@ -36,6 +41,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 10 },
         { size: "L", stock: 5 },
       ],
+      wishListed: false,
     },
     {
       id: "3",
@@ -48,6 +54,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 0 },
         { size: "L", stock: 0 },
       ],
+      wishListed: true,
     },
     {
       id: "4",
@@ -60,6 +67,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 10 },
         { size: "L", stock: 5 },
       ],
+      wishListed: false,
     },
     {
       id: "5",
@@ -72,6 +80,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 10 },
         { size: "L", stock: 5 },
       ],
+      wishListed: false,
     },
     {
       id: "6",
@@ -84,6 +93,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 10 },
         { size: "L", stock: 0 },
       ],
+      wishListed: false,
     },
     {
       id: "7",
@@ -96,6 +106,7 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 0 },
         { size: "L", stock: 5 },
       ],
+      wishListed: false,
     },
     {
       id: "8",
@@ -108,8 +119,9 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         { size: "M", stock: 0 },
         { size: "L", stock: 0 },
       ],
+      wishListed: false,
     },
-  ];
+  ].splice(0, variant === "home" ? 4 : 8);
 
   return (
     <GridContainer
@@ -118,9 +130,24 @@ const ProductGrid: React.FC<Props> = ({ className }) => {
         className
       )}
     >
-      {products.map((product) => (
-        <ProductCard key={product.id} {...product} addItem={addItem} />
-      ))}
+      {products.map((product) =>
+        variant === "shop" ? (
+          <ProductCard
+            key={product.id}
+            {...product}
+            addItem={addItem}
+            variant={variant}
+          />
+        ) : (
+          <HomeProductCard
+            key={product.id}
+            {...product}
+            addItem={addItem}
+            variant="home"
+            className="w-full"
+          />
+        )
+      )}
     </GridContainer>
   );
 };

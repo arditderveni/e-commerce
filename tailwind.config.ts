@@ -82,6 +82,9 @@ export default {
         8: "8px",
         "product-card": "1px",
       },
+      stroke: {
+        accent: "var(--accent)",
+      },
       borderColor: {
         "product-border": "var(--product-border)",
       },
@@ -93,6 +96,12 @@ export default {
         110: "1.1",
         300: "3",
         400: "4",
+      },
+      maxHeight: {
+        viewport: "calc(100vh - 72px)",
+      },
+      minHeight: {
+        viewport: "calc(100vh - 72px)",
       },
     },
   },

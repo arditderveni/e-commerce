@@ -67,7 +67,8 @@ body {
     --size-active: #d7f1ff;
     --size-active-foreground: #fafafa;
     --size-none: #707070;
-    --product-border: #424242;
+    --product-border: #6060601f;
+    cursor: default;
   }
   .dark {
     --background: #0a0a0a;
@@ -129,7 +130,7 @@ body {
     --size-active: #d7f1ff;
     --size-active-foreground: #fafafa;
     --size-none: #262626;
-    --product-border: #424242;
+    /* --product-border: #424242; */
   }
 }
 

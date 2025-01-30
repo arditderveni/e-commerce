@@ -5,7 +5,7 @@ const CardHeader: FC<CardHeaderProps> = ({ className, ref, ...props }) => (
   <div
     ref={ref}
     className={cn(
-      "flex flex-col border-b-slate-300 border-b-2 space-y-1.5 p-4",
+      "flex flex-row border-b-slate-300 border-b-2 space-y-1.5 p-4",
       className
     )}
     {...props}

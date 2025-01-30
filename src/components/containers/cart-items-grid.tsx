@@ -11,8 +11,6 @@ const CartItemsGrid: React.FC = ({}) => {
 
   const { items } = useContext(CartContext);
 
-  console.log("Items : ", items);
-
   const cartItems = useMemo(() => {
     return items.map((item) => <CartItemCard key={item.id} item={item} />);
   }, [items]);
