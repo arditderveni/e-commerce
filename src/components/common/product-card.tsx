@@ -18,6 +18,7 @@ import {
 } from ".";
 import Image from "next/image";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const ProductCard: FC<ProductCardProps> = ({
   name,
@@ -25,6 +26,9 @@ const ProductCard: FC<ProductCardProps> = ({
   image,
   colors,
   sizes,
+  description,
+  ingredients,
+  features,
   className,
   ref,
   id,
@@ -32,6 +36,8 @@ const ProductCard: FC<ProductCardProps> = ({
   variant,
   addItem,
 }) => {
+  const router = useRouter();
+
   const starRatingRef = useRef({
     value: 0,
     setValue: (value: number) => {
@@ -85,10 +91,41 @@ const ProductCard: FC<ProductCardProps> = ({
     addItem(item);
   }, [name, id, price, addItem, image]);
 
+  const goToProduct = useCallback(() => {
+    localStorage.setItem(
+      "product",
+      JSON.stringify({
+        name,
+        price,
+        image,
+        id,
+        colors,
+        sizes,
+        description,
+        ingredients,
+        features,
+      })
+    );
+
+    router.push(`/shop/${id}`);
+  }, [
+    router,
+    id,
+    name,
+    price,
+    image,
+    colors,
+    sizes,
+    description,
+    ingredients,
+    features,
+  ]);
+
   return (
     <CardComponent
       ref={ref}
       className={cn("border-1 border-product-border", className)}
+      onClick={goToProduct}
     >
       <CardHeader className="border-none justify-between align-middle">
         {name}

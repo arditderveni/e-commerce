@@ -1,8 +1,32 @@
-import { SectionHeader } from "@/components/common";
-import React from "react";
+"use client";
 
-const page = () => {
-  return <SectionHeader title="page" breadcrumb={true} className="bg" />;
+import { ProductView } from "@/components/containers";
+import React, { useEffect, useState } from "react";
+
+const emptyProduct = {
+  id: "",
+  name: "",
+  price: 0,
+  image: "",
+  colors: [],
+  sizes: [],
+  wishListed: false,
+  description: "",
+  ingredients: [],
+  features: [],
 };
 
-export default page;
+const Page = () => {
+  const [product, setProduct] = useState<Product | null>(emptyProduct);
+
+  useEffect(() => {
+    const data = localStorage.getItem("product");
+    if (data) {
+      setProduct(JSON.parse(data));
+    }
+  }, []);
+
+  return <ProductView product={product as Product} className="min-h-[50vh]" />;
+};
+
+export default Page;

@@ -5,7 +5,7 @@ import { Image } from "lucide-react";
 const ImageSkeleton = ({ className = "", style = {} }) => {
   return (
     <Skeleton className={className} style={style}>
-      <Image className="stroke-accent w-full h-full" />
+      <Image className="stroke-accent w-full h-full" strokeWidth={1} />
     </Skeleton>
   );
 };

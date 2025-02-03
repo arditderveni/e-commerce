@@ -2,10 +2,9 @@
 
 import React from "react";
 import { GridContainer } from "../layout";
-import { ProductCard } from "../common";
+import { ProductCard, HomeProductCard } from "../common";
 import { cn } from "@/lib/utils";
 import { useCartContext } from "@/hooks";
-import HomeProductCard from "../common/home-product-card";
 
 interface Props {
   className?: string;
@@ -29,6 +28,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 5 },
       ],
       wishListed: true,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "2",
@@ -42,6 +44,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 5 },
       ],
       wishListed: false,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "3",
@@ -55,6 +60,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 0 },
       ],
       wishListed: true,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "4",
@@ -68,6 +76,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 5 },
       ],
       wishListed: false,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "5",
@@ -81,6 +92,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 5 },
       ],
       wishListed: false,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "6",
@@ -94,6 +108,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 0 },
       ],
       wishListed: false,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "7",
@@ -107,6 +124,9 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 5 },
       ],
       wishListed: false,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
     {
       id: "8",
@@ -120,15 +140,15 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
         { size: "L", stock: 0 },
       ],
       wishListed: false,
+      description: "This is a description",
+      ingredients: ["ingredient 1", "ingredient 2", "ingredient 3"],
+      features: ["feature 1", "feature 2", "feature 3"],
     },
   ].splice(0, variant === "home" ? 4 : 8);
 
   return (
     <GridContainer
-      className={cn(
-        "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
-        className
-      )}
+      className={cn("grid-cols-1 sm:grid-cols-2 md:grid-cols-3", className)}
     >
       {products.map((product) =>
         variant === "shop" ? (

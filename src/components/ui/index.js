@@ -16,3 +16,4 @@ export * from "./skeleton";
 export * from "./sonner";
 export * from "./switch";
 export * from "./carousel";
+export * from "./accordion";

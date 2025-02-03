@@ -35,6 +35,7 @@ import * as SwitchPrimitives from "@radix-ui/react-switch";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import useEmblaCarousel, { UseEmblaCarouselType } from "embla-carousel-react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 declare global {
   //#region Common Types
@@ -66,6 +67,9 @@ declare global {
     colors?: string[];
     sizes: Size[];
     wishListed: boolean;
+    description?: string;
+    ingredients?: string[];
+    features?: string[];
   };
 
   type SizeTypes = "S" | "M" | "L" | "";
@@ -235,7 +239,7 @@ declare global {
     rating: number;
     ratable: boolean;
     className?: string;
-    ref: RefObject<{
+    ref?: RefObject<{
       value: number;
       setValue: (value: number) => void;
     }>;
@@ -243,11 +247,12 @@ declare global {
 
   interface SizesProps {
     sizes: Size[];
-    ref: SizePickerRef;
+    ref?: SizePickerRef;
   }
 
   interface QuantityButtonProps {
-    ref: RefObject<{
+    hasNoStock?: boolean;
+    ref?: RefObject<{
       quantity: number;
       setQuantity: (quantity: number) => void;
     }>;
@@ -903,6 +908,38 @@ declare global {
     canScrollPrev: boolean;
     canScrollNext: boolean;
   } & CarouselProps;
+
+  //#endregion
+
+  //* ---------- */
+
+  //#region Accordion
+
+  interface AccordionItemProps
+    extends ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
+    ref?: RefObject<ComponentRef<typeof AccordionPrimitive.Item>>;
+  }
+
+  interface AccordionTriggerProps
+    extends ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
+    ref?: RefObject<ComponentRef<typeof AccordionPrimitive.Trigger>>;
+  }
+
+  interface AccordionContentProps
+    extends ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> {
+    ref?: RefObject<ComponentRef<typeof AccordionPrimitive.Content>>;
+  }
+
+  type AccordionProps = {
+    className?: string;
+    collapsible?: boolean;
+    items: {
+      trigger: string | ReactNode;
+      content: string | ReactNode;
+    }[];
+    type?: "single" | "multiple";
+    ref?: RefObject<ComponentRef<typeof AccordionPrimitive.Root>>;
+  } & ComponentProps<typeof AccordionPrimitive.Root>;
 
   //#endregion
 }

@@ -20,11 +20,7 @@ function SkeletonCard({ className }: { className?: string }) {
       </CardHeader>
 
       <CardContent className="w-full">
-        <ImageSkeleton
-          className="w-[300px] h-[300px] mx-auto"
-          width={300}
-          height={300}
-        />
+        <ImageSkeleton className="w-[300px] h-[300px] mx-auto" />
         <div className="flex align-middle justify-between mt-4">
           <Skeleton className="w-20 h-6 bg-accent" />
           <Skeleton className="w-16 h-6 bg-accent" />

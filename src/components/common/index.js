@@ -24,3 +24,6 @@ export { default as SizePicker } from "./size-picker";
 export { default as QuantityButton } from "./quantity-button";
 export { default as HoverCard } from "./hover-card";
 export { default as Carousel } from "./carousel";
+export { default as Accordion } from "./accordion";
+export { default as ProductCardFooter } from "./product-card-footer";
+export { default as HomeProductCard } from "./home-product-card";
