@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import {
-  DropdownMenu,
+  DropdownMenuComp,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
@@ -58,7 +58,7 @@ const HeaderUser: React.FC<Props> = ({ user }) => {
   ));
 
   return (
-    <DropdownMenu>
+    <DropdownMenuComp>
       <DropdownMenuTrigger className="flex items-center gap-2">
         <Suspense fallback={<HeaderUserSkeleton />}>
           <Avatar className="h-8 w-8 rounded-lg">
@@ -106,7 +106,7 @@ const HeaderUser: React.FC<Props> = ({ user }) => {
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenuComp>
   );
 };
 

@@ -4,3 +4,4 @@ export { default as Banner } from "./banner";
 export { default as BrandContainer } from "./brand-container";
 export { default as ProductDetails } from "./product-details";
 export { default as ProductView } from "./product-view";
+export { default as Filters } from "./filters";

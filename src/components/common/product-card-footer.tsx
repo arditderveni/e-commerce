@@ -60,7 +60,7 @@ const ProductCardFooter: React.FC<Props> = ({
   }, [name, id, price, addItem, image]);
 
   return (
-    <CardFooter className={cn("space-y-2", className)}>
+    <CardFooter className={cn("space-y-2 p-0", className)}>
       <div className="flex justify-center gap-10 items-center p-2  mt-auto">
         {sizes && <SizePicker sizes={sizes} ref={sizePickerRef} />}
         {colors && (

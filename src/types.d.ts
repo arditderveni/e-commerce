@@ -116,6 +116,11 @@ declare global {
     setWishListed: (value: boolean) => void;
   }>;
 
+  type ActiveFiltersRef = RefObject<{
+    activeFilters: string[];
+    setActiveFilters: (filter: string) => void;
+  }>;
+
   //#endregion
 
   //#region Prop Types

@@ -17,3 +17,5 @@ export * from "./sonner";
 export * from "./switch";
 export * from "./carousel";
 export * from "./accordion";
+export * from "./collapsible";
+export { default as CheckBox } from "./checkbox";

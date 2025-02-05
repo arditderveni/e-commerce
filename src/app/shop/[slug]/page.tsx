@@ -17,7 +17,7 @@ const emptyProduct = {
 };
 
 const Page = () => {
-  const [product, setProduct] = useState<Product | null>(emptyProduct);
+  const [product, setProduct] = useState<Product>(emptyProduct);
 
   useEffect(() => {
     const data = localStorage.getItem("product");

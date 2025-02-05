@@ -10,7 +10,7 @@ const WishHeart: React.FC<WishHeartProps> = ({
   className,
   ref,
 }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const heartRef = useRef<SVGSVGElement>(null);
 
@@ -23,7 +23,7 @@ const WishHeart: React.FC<WishHeartProps> = ({
 
   useEffect(() => {
     if (heartRef.current) {
-      if (theme === "dark") {
+      if (resolvedTheme === "dark") {
         if (value) {
           heartRef.current.style.fill = "white";
         } else {
@@ -37,7 +37,7 @@ const WishHeart: React.FC<WishHeartProps> = ({
         }
       }
     }
-  }, [theme, value]);
+  }, [resolvedTheme, value, heartRef]);
 
   return (
     <Heart

@@ -11,6 +11,11 @@ const SizePicker: React.FC<SizesProps> = ({ sizes, ref }) => {
     setSize,
   }));
 
+  const handlePickSize = (size: SizeTypes) => {
+    if (sizes.find((s) => s.size === size)?.stock === 0) return;
+    setSize(size);
+  };
+
   if (sizes.every(({ stock }) => stock === 0)) {
     return (
       <div className="text-primary rounded-md bg-muted px-4 py-2">
@@ -29,7 +34,7 @@ const SizePicker: React.FC<SizesProps> = ({ sizes, ref }) => {
             stock === 0 && "bg-muted text-gray-500 cursor-not-allowed",
             size === prodSize ? "bg-size-active" : ""
           )}
-          onClick={() => setSize(prodSize)}
+          onClick={() => handlePickSize(prodSize)}
         >
           {prodSize}
         </div>

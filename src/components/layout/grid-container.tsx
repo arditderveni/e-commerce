@@ -5,8 +5,6 @@ const GridContainer: React.FC<WrapperProps> = ({
   children,
   className = "",
 }) => {
-  console.log("CLASSNAME", className);
-
   return (
     <div
       className={cn(

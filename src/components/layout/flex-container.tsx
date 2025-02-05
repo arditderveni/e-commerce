@@ -6,9 +6,7 @@ const FlexContainer: React.FC<WrapperProps> = ({
   children,
 }) => {
   return (
-    <div className={cn(`p-4 flex flex-wrap items-center gap-4`, className)}>
-      {children}
-    </div>
+    <div className={cn(`p-4 flex flex-wrap gap-4`, className)}>{children}</div>
   );
 };
 

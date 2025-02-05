@@ -71,7 +71,11 @@ const ProductDetails: React.FC<Props> = ({ product, className }) => {
         </div>
 
         <div className="flex gap-3 items-center align-middle">
-          <ColorPalette colors={colors as []} ref={colorRef} className="flex" />
+          <ColorPalette
+            colors={colors as []}
+            ref={colorRef}
+            className="flex gap-2"
+          />
           <SizePicker sizes={sizes as []} ref={sizePickerRef} />
           <QuantityButton ref={quantityButtonRef} />
 

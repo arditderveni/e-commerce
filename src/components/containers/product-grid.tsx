@@ -21,7 +21,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 1",
       price: 100,
       image: "/images/product-1.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#123456", "#abcdef"],
       sizes: [
         { size: "S", stock: 0 },
         { size: "M", stock: 10 },
@@ -37,7 +37,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 2",
       price: 200,
       image: "/images/product-2.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#654321", "#fedcba"],
       sizes: [
         { size: "S", stock: 0 },
         { size: "M", stock: 10 },
@@ -53,7 +53,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 3",
       price: 300,
       image: "/images/product-3.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#789abc", "#cba987"],
       sizes: [
         { size: "S", stock: 0 },
         { size: "M", stock: 0 },
@@ -69,7 +69,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 4",
       price: 400,
       image: "/images/product-4.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#abcdef", "#123456"],
       sizes: [
         { size: "S", stock: 0 },
         { size: "M", stock: 10 },
@@ -85,7 +85,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 5",
       price: 500,
       image: "/images/product-5.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#654321", "#fedcba"],
       sizes: [
         { size: "S", stock: 0 },
         { size: "M", stock: 10 },
@@ -101,7 +101,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 6",
       price: 600,
       image: "/images/product-6.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#789abc", "#cba987"],
       sizes: [
         { size: "S", stock: 20 },
         { size: "M", stock: 10 },
@@ -117,7 +117,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 7",
       price: 700,
       image: "/images/product-7.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#abcdef", "#123456"],
       sizes: [
         { size: "S", stock: 10 },
         { size: "M", stock: 0 },
@@ -133,7 +133,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
       name: "Product 8",
       price: 800,
       image: "/images/product-8.jpg",
-      colors: ["#000", "#fff", "#45110e"],
+      colors: ["#000", "#fff", "#45110e", "#654321", "#fedcba"],
       sizes: [
         { size: "S", stock: 0 },
         { size: "M", stock: 0 },

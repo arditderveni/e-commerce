@@ -125,7 +125,6 @@ const ProductCard: FC<ProductCardProps> = ({
     <CardComponent
       ref={ref}
       className={cn("border-1 border-product-border", className)}
-      onClick={goToProduct}
     >
       <CardHeader className="border-none justify-between align-middle">
         {name}
@@ -133,7 +132,7 @@ const ProductCard: FC<ProductCardProps> = ({
           <WishHeart wishListed={wishListed} ref={heartRef} />
         ) : null}
       </CardHeader>
-      <CardContent className="w-full">
+      <CardContent className="w-full cursor-pointer" onClick={goToProduct}>
         <Image src={image} alt={name} width={300} height={300} />
         <div className="flex align-middle justify-between">
           {colors && (
