@@ -40,7 +40,7 @@ const SignupFormClient: React.FC<SignupFormProps> = ({ onSubmit }) => {
       label: "Email",
       placeholder: "Enter your email",
       required: true,
-      className: "w-full", // Add this line
+      className: "w-full mt-2", // Add this line
     },
     {
       name: "password",
@@ -48,7 +48,7 @@ const SignupFormClient: React.FC<SignupFormProps> = ({ onSubmit }) => {
       label: "Password",
       placeholder: "Enter your password",
       required: true,
-      className: "w-full", // Add this line
+      className: "w-full mt-2", // Add this line
     },
     {
       name: "confirmPassword",
@@ -56,7 +56,7 @@ const SignupFormClient: React.FC<SignupFormProps> = ({ onSubmit }) => {
       label: "Confirm Password",
       placeholder: "Confirm your password",
       required: true,
-      className: "w-full", // Add this line
+      className: "w-full mt-2", // Add this line
     },
     {
       name: "birthDate",
@@ -64,7 +64,7 @@ const SignupFormClient: React.FC<SignupFormProps> = ({ onSubmit }) => {
       label: "Birth Date",
       placeholder: "Enter your birth date",
       required: true,
-      className: "w-full", // Add this line
+      className: "w-full mt-2", // Add this line
     },
   ];
 

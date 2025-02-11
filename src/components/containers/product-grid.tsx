@@ -164,7 +164,7 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
             {...product}
             addItem={addItem}
             variant="home"
-            className="w-full"
+            className="w-full border-1 border-hover-card"
           />
         )
       )}

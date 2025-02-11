@@ -2,9 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import { capitalize, cn } from "@/lib/utils";
-import { CollapseMenu } from "../common";
-import { CheckBox } from "../ui";
-import ActiveFilters from "../common/active-filters";
+import { CollapseMenu, ActiveFilters, LabeledCheckbox } from "../common";
 
 interface Props {
   className?: string;
@@ -13,9 +11,6 @@ interface Props {
 const filters = [
   { title: "Gender", options: ["men", "women", "unisex", "kids"] },
   { title: "Category", options: ["shirts", "pants", "shoes", "accessories"] },
-  { title: "New" },
-  { title: "Sale" },
-  { title: "Best Sellers" },
   {
     title: "Price",
     options: [
@@ -28,17 +23,30 @@ const filters = [
     ],
   },
   { title: "Size", options: ["XS", "S", "M", "L", "XL", "XXL"] },
+  { title: "New" },
+  { title: "Sale" },
+  { title: "Best Sellers" },
 ];
 
 const Filters: React.FC<Props> = ({ className = "" }) => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
-  const onFilterChange = (filter: string) => {
-    setActiveFilters((prev) =>
-      prev.includes(filter)
-        ? prev.filter((f) => f !== filter)
-        : [...prev, filter]
-    );
+  const onFilterChange = (filter: string, groupTitle?: string) => {
+    setActiveFilters((prev) => {
+      if (prev.includes(filter)) {
+        return prev.filter((f) => f !== filter);
+      }
+      if (groupTitle) {
+        const group = filters.find((f) => f.title === groupTitle);
+        if (group && group.options) {
+          const newFilters = prev.filter((f) => !group.options.includes(f));
+          return newFilters.includes(filter)
+            ? newFilters
+            : [...newFilters, filter];
+        }
+      }
+      return [...prev, filter];
+    });
   };
 
   const allFilters = useMemo(() => {
@@ -48,22 +56,21 @@ const Filters: React.FC<Props> = ({ className = "" }) => {
           <CollapseMenu
             key={`${filter.title}-${index}`}
             title={filter.title}
-            className="border-b-1 py-2"
+            className="border-b-1 py-2 space-y-2"
+            titleClassName="font-bold"
           >
             {
               //@ts-expect-error - We check if options exist above
               filter?.options.map((option, index) => (
-                <div
-                  className="ml-2 items-center align-middle w-full flex gap-2"
+                <LabeledCheckbox
                   key={`${option}-${index}`}
+                  id={`${option.toLowerCase()}`}
+                  onClick={() => onFilterChange(option, filter.title)}
+                  checked={activeFilters.includes(option)}
+                  variant="rounded"
                 >
-                  <CheckBox
-                    id={`${option.toLowerCase()}`}
-                    onClick={() => onFilterChange(option)}
-                    checked={activeFilters.includes(option)}
-                  />
-                  <label htmlFor={`${option}`}>{capitalize(option)}</label>
-                </div>
+                  {capitalize(option)}
+                </LabeledCheckbox>
               ))
             }
           </CollapseMenu>
@@ -71,23 +78,21 @@ const Filters: React.FC<Props> = ({ className = "" }) => {
       }
 
       return (
-        <div
-          className="ml-2 items-center align-middle flex gap-2"
+        <LabeledCheckbox
           key={`${filter.title}-${index}`}
+          id={`${filter.title.toLowerCase()}`}
+          onClick={() => onFilterChange(filter.title)}
+          checked={activeFilters.includes(filter.title)}
+          variant="rounded"
         >
-          <CheckBox
-            id={`${filter.title.toLowerCase()}`}
-            onClick={() => onFilterChange(filter.title)}
-            checked={activeFilters.includes(filter.title)}
-          />
-          <label htmlFor={`${filter.title}`}>{filter.title}</label>
-        </div>
+          {capitalize(filter.title)}
+        </LabeledCheckbox>
       );
     });
   }, [activeFilters]);
 
   return (
-    <div className={cn("space-y-3 w-[200px]", className)}>
+    <div className={cn("space-y-3 w-[200px] pb-4", className)}>
       <ActiveFilters
         {...{
           activeFilters,

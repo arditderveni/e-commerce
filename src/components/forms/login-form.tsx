@@ -1,5 +1,10 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import LoginFormClient from "./LoginFormClient";
+import { LoginSkeleton } from "../skeletons";
+
+const LoginFormClient = dynamic(() => import("./LoginFormClient"), {
+  loading: () => <LoginSkeleton />,
+});
 
 const LoginForm: React.FC = () => {
   const onSubmit = async (data: LoginFormData) => {

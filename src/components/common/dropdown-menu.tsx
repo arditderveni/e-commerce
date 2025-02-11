@@ -13,16 +13,18 @@ interface Props {
   trigger: React.ReactNode;
   label?: string | React.ReactNode;
   options: string[] | React.ReactNode[];
+  dir: "ltr" | "rtl";
 }
 
 const DropdownMenu: React.FC<Props> = ({
   className,
   trigger,
   label,
+  dir,
   options,
 }) => {
   return (
-    <DropdownMenuComp>
+    <DropdownMenuComp dir={dir}>
       <DropdownMenuTrigger className="focus-visible:outline-none">
         {trigger}
       </DropdownMenuTrigger>

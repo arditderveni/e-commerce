@@ -2,7 +2,8 @@ import { FormInput, PasswordInput } from "@/components/common";
 
 import { Button } from "@/components/ui/button";
 import { JSX } from "react";
-import { FieldValues, FormProvider as Form } from "react-hook-form";
+import { FieldValues, FormProvider } from "react-hook-form";
+import cn from "./classnames";
 
 /**
  * Renders a dynamic form based on the provided inputs and form configuration.
@@ -22,14 +23,16 @@ const dynamicFormRender = <T extends FieldValues>({
   submitHandler,
   className = "",
 }: DynamicFormRenderParams<T>): JSX.Element => {
+  console.log("DYNAMIC FORM CLASSNAME : ", className);
+
   return (
-    <Form {...form}>
+    <FormProvider {...form}>
       <form
         onSubmit={() => {
           /** Add submit logic here */
           submitHandler(form.getValues());
         }}
-        className={`${className}`}
+        className={cn(`flex flex-wrap align-middle items-center`, className)}
       >
         {inputs.map((el, i) => {
           switch (el.type) {
@@ -62,9 +65,11 @@ const dynamicFormRender = <T extends FieldValues>({
             }
           }
         })}
-        <Button type="submit">{submitText}</Button>
+        <Button type="submit" className="mt-2">
+          {submitText}
+        </Button>
       </form>
-    </Form>
+    </FormProvider>
   );
 };
 

@@ -87,6 +87,7 @@ export default {
       },
       borderColor: {
         "product-border": "var(--product-border)",
+        "hover-card": "var(--hover-card)",
       },
       scale: {
         "90": "0.9",
@@ -94,6 +95,7 @@ export default {
         "101": "1.01",
         "105": "1.05",
         "110": "1.1",
+        "120": "1.2",
         "300": "3",
         "400": "4",
       },

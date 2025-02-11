@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { AvatarComp, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { userInitials } from "@/lib/utils";
 import {
   Bell,
@@ -61,12 +61,12 @@ const HeaderUser: React.FC<Props> = ({ user }) => {
     <DropdownMenuComp>
       <DropdownMenuTrigger className="flex items-center gap-2">
         <Suspense fallback={<HeaderUserSkeleton />}>
-          <Avatar className="h-8 w-8 rounded-lg">
+          <AvatarComp className="h-8 w-8 rounded-lg">
             <AvatarImage src={user.avatar} alt={user.name} />
             <AvatarFallback className="rounded-lg">
               {userInitials(user.name)}
             </AvatarFallback>
-          </Avatar>
+          </AvatarComp>
           {!isMobile && (
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-semibold">{user.name}</span>
@@ -85,12 +85,12 @@ const HeaderUser: React.FC<Props> = ({ user }) => {
       >
         <DropdownMenuLabel className="p-0 font-normal">
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-            <Avatar className="h-8 w-8 rounded-lg">
+            <AvatarComp className="h-8 w-8 rounded-lg">
               <AvatarImage src={user.avatar} alt={user.name} />
               <AvatarFallback className="rounded-lg">
                 {userInitials(user.name)}
               </AvatarFallback>
-            </Avatar>
+            </AvatarComp>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-semibold">{user.name}</span>
               <span className="truncate text-xs">{user.email}</span>

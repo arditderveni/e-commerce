@@ -7,4 +7,4 @@ const Tooltip = TooltipPrimitive.Root;
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
 export { default as TooltipContent } from "./tooltip-content";
-export { TooltipProvider, Tooltip, TooltipTrigger };
+export { TooltipProvider, Tooltip as TooltipComp, TooltipTrigger };

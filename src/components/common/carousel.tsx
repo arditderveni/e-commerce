@@ -6,13 +6,16 @@ const Carousel: React.FC<Carousel> = ({
   items,
   itemClassName,
   orientation,
+  overflowVisible,
+  sliderClassName,
 }) => {
   return (
-    <CarouselComp
-      className={cn("overflow-hidden", className)}
-      orientation={orientation}
-    >
-      <CarouselContent>
+    <CarouselComp className={cn(className)} orientation={orientation}>
+      <CarouselContent
+        className="overflow-visible"
+        overflowVisible={overflowVisible}
+        sliderClassName={sliderClassName}
+      >
         {items.map((item, index) => (
           <CarouselItem
             key={`carousel-item-${index}`}

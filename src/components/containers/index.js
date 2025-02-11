@@ -5,3 +5,4 @@ export { default as BrandContainer } from "./brand-container";
 export { default as ProductDetails } from "./product-details";
 export { default as ProductView } from "./product-view";
 export { default as Filters } from "./filters";
+export { default as ReviewsBlock } from "./reviews-block";

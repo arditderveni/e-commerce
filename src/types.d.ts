@@ -46,14 +46,6 @@ declare global {
     id: number;
     birthdate?: Date;
   };
-
-  type BusRoute = {
-    title: string;
-    description: string;
-    path: string;
-    id: number;
-  };
-
   type SelectOption = {
     label: string;
     value: string;
@@ -88,6 +80,15 @@ declare global {
     name: string;
     image?: string;
     slug: string;
+  };
+
+  type Review = {
+    id: string;
+    user: User;
+    rating: number;
+    comment: string;
+    description: string;
+    date: Date;
   };
 
   //#endregion
@@ -561,12 +562,12 @@ declare global {
 
   interface CardCompProps {
     title: string;
-    content: string;
-    footer: ReactNode;
+    footer?: ReactNode;
     className?: string;
     Icon?: ElementType;
     children?: ReactNode;
     ref?: RefObject<HTMLDivElement>;
+    headerVariant?: "rtl" | "ltr";
   }
 
   //#endregion
@@ -889,10 +890,14 @@ declare global {
   interface Carousel extends CarouselCompProps {
     items: ReactNode[];
     itemClassName?: string;
+    overflowVisible?: boolean;
+    sliderClassName?: string;
   }
 
   interface CarouselContentProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
+    overflowVisible?: boolean;
+    sliderClassName?: string;
     ref?: RefObject<HTMLDivElement>;
   }
 

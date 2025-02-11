@@ -7,12 +7,20 @@ import { cn } from "@/lib/utils";
 const CarouselContent: FC<CarouselContentProps> = ({
   className,
   ref,
+  overflowVisible,
+  sliderClassName,
   ...props
 }) => {
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div
+      ref={carouselRef}
+      className={cn(
+        sliderClassName,
+        overflowVisible ? "overflow-visible" : "overflow-hidden"
+      )}
+    >
       <div
         ref={ref}
         className={cn(

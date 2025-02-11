@@ -17,13 +17,23 @@ const Card: React.FC<CardCompProps> = ({
   className = "",
   Icon,
   ref,
+  headerVariant,
 }) => {
+  const Header =
+    headerVariant === "ltr" ? (
+      <CardTitle>
+        {title} {Icon && <Icon />}
+      </CardTitle>
+    ) : (
+      <CardTitle>
+        {Icon && <Icon />} {title}
+      </CardTitle>
+    );
+
   return (
     <CardComponent className={className} ref={ref}>
-      <CardHeader>
-        <CardTitle>
-          {title} {Icon && <Icon />}
-        </CardTitle>
+      <CardHeader className="flex justify-between border-none">
+        <CardTitle>{Header}</CardTitle>
         {/* <CardDescription>{description}</CardDescription> */}
       </CardHeader>
       <CardContent>{children}</CardContent>

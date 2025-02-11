@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import useSidebar from "./useSidebar";
 import { cn } from "@/lib/utils";
 import sidebarMenuButtonVariants from "./sidebarMenuButtonVariants";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip";
+import { TooltipComp, TooltipContent, TooltipTrigger } from "../tooltip";
 import { FC } from "react";
 
 const SidebarMenuButton: FC<SidebarMenuButtonProps> = ({
@@ -41,7 +41,7 @@ const SidebarMenuButton: FC<SidebarMenuButtonProps> = ({
   }
 
   return (
-    <Tooltip>
+    <TooltipComp>
       <TooltipTrigger asChild>{button}</TooltipTrigger>
       <TooltipContent
         side="right"
@@ -49,7 +49,7 @@ const SidebarMenuButton: FC<SidebarMenuButtonProps> = ({
         hidden={state !== "collapsed" || isMobile}
         {...tooltip}
       />
-    </Tooltip>
+    </TooltipComp>
   );
 };
 

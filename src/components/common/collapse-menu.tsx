@@ -9,9 +9,15 @@ interface Props {
   children: React.ReactNode;
   className?: string;
   title: string;
+  titleClassName?: string;
 }
 
-const CollapseMenu: React.FC<Props> = ({ children, className, title }) => {
+const CollapseMenu: React.FC<Props> = ({
+  children,
+  className,
+  title,
+  titleClassName,
+}) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -22,7 +28,12 @@ const CollapseMenu: React.FC<Props> = ({ children, className, title }) => {
         className,
       }}
     >
-      <CollapsibleTrigger className="flex items-center w-full justify-between">
+      <CollapsibleTrigger
+        className={cn(
+          "flex items-center w-full justify-between",
+          titleClassName
+        )}
+      >
         {title}{" "}
         <ChevronDown
           className={cn(

@@ -2,8 +2,8 @@
 
 import { cn } from "@/lib/utils";
 import { FC, useImperativeHandle, useState } from "react";
-import { DropdownMenu } from "../common";
-import { ChevronDown } from "lucide-react";
+import { Tooltip } from "../common";
+import { ChevronUp } from "lucide-react";
 
 const ColorPalette: FC<ColorPaletteProps> = ({ colors, className, ref }) => {
   const [color, setColor] = useState(colors[0]);
@@ -13,38 +13,49 @@ const ColorPalette: FC<ColorPaletteProps> = ({ colors, className, ref }) => {
     setColor,
   }));
 
+  const onColorPick = (color: string) => {
+    const cIndex = colors.findIndex((c) => c === color);
+
+    if (cIndex > 2) {
+      colors.unshift(colors.splice(cIndex, 1)[0]);
+    }
+
+    setColor(color);
+  };
+
   return (
     <div className={className}>
       {" "}
-      {colors.slice(0, 3).map((color, index) => (
+      {colors.slice(0, 3).map((c, index) => (
         <div
-          key={`${color}-${index}`}
-          style={{ backgroundColor: color }}
+          key={`${c}-${index}`}
+          style={{ backgroundColor: c }}
           className={cn(
-            `w-6 h-6 rounded-full hover:shadow-md cursor-pointer transition-all duration-300 ease-in-out border-1 border-foreground hover:scale-105`
+            `w-6 h-6 rounded-full hover:shadow-md cursor-pointer transition-all duration-300 ease-in-out border-1 border-foreground`,
+            color === c ? "scale-120" : "hover:scale-105"
           )}
-          onClick={() => setColor(color)}
+          onClick={() => onColorPick(c)}
         />
-      ))}
+      ))}{" "}
       {colors.length > 3 ? (
-        <DropdownMenu
+        <Tooltip
           {...{
-            trigger: <ChevronDown />,
-            options: colors
-              .slice(3)
-              .map((color, index) => (
-                <div
-                  key={`${color}-${index}`}
-                  style={{ backgroundColor: color }}
-                  className={cn(
-                    `w-6 h-6 rounded-full hover:shadow-md cursor-pointer transition-all duration-300 ease-in-out border-1 border-foreground hover:scale-105`
-                  )}
-                  onClick={() => setColor(color)}
-                />
-              )),
-            className: "w-fit",
+            trigger: <ChevronUp />,
+            className: "w-fit space-y-2 !px-2 bg-accent",
+            delay: 300,
           }}
-        />
+        >
+          {colors.slice(3).map((c, index) => (
+            <div
+              key={`${c}-${index}`}
+              style={{ backgroundColor: c }}
+              className={cn(
+                `w-6 h-6 rounded-full hover:shadow-md cursor-pointer transition-all duration-300 ease-in-out border-1 border-foreground hover:scale-105`
+              )}
+              onClick={() => onColorPick(c)}
+            />
+          ))}
+        </Tooltip>
       ) : null}
     </div>
   );

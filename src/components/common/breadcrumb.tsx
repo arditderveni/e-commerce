@@ -11,12 +11,13 @@ import {
 } from "../ui/breadcrumb";
 import { usePathname, useRouter } from "next/navigation";
 import { capitalize } from "@/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+// import {
+//   DropdownMenuComp,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from "../ui/dropdown-menu";
+import DropdownMenu from "./dropdown-menu";
 
 const Breadcrumb: React.FC = () => {
   const pathName = usePathname().split("/");
@@ -39,7 +40,13 @@ const Breadcrumb: React.FC = () => {
       return (
         <Fragment key={`crumb-fragment-${Math.floor(Math.random() * 100)}`}>
           <BreadcrumbItem>
-            <DropdownMenu>
+            <DropdownMenu
+              className="flex items-center gap-1"
+              trigger={<BreadcrumbEllipsis className="h-4 w-4" />}
+              options={withoutLast.map((item) => capitalize(item))}
+              dir="ltr"
+            />
+            {/* <DropdownMenuComp>
               <DropdownMenuTrigger className="flex items-center gap-1">
                 <BreadcrumbEllipsis className="h-4 w-4" />
               </DropdownMenuTrigger>
@@ -58,7 +65,7 @@ const Breadcrumb: React.FC = () => {
                   );
                 })}
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenuComp> */}
           </BreadcrumbItem>
           <BreadcrumbSeparator />
 

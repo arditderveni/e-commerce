@@ -33,7 +33,7 @@ const HomeProductCard: React.FC<Props> = ({
               id,
               price,
               colors,
-              className,
+              // className,
               wishListed,
               description,
               variant: "home",

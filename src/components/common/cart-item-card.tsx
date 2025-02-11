@@ -13,7 +13,7 @@ const CartItemCard: React.FC<Props> = ({ className, item }) => {
   return (
     <Card
       className={cn(
-        "flex-row gap-5  items-center p-4 border-1 border-product-border rounded-lg max-h-60",
+        "flex-row gap-5 items-center p-4 border-1 border-product-border rounded-lg max-h-60",
         className
       )}
     >

@@ -1,4 +1,9 @@
-import SignupFormClient from "./SignupFormClient";
+import dynamic from "next/dynamic";
+import { SignupSkeleton } from "../skeletons";
+
+const SignupFormClient = dynamic(() => import("./SignupFormClient"), {
+  loading: () => <SignupSkeleton />,
+});
 
 const SignupForm: React.FC = () => {
   const onSubmit = async (data: SignUpFormData) => {

@@ -1,19 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { AppHeader, ThemeProvider } from "@/components/global";
+
+import "../globals.css";
+import { AppFooter, AppHeader } from "@/components/global";
 import { CartProvider } from "@/lib/store/cart-provider";
-import { Toaster } from "sonner";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "E-Commerce",
@@ -103,25 +92,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          storageKey="theme"
-          enableSystem
-        >
-          <CartProvider>
-            {/* <AppHeader /> */}
-            <main className="max-h-viewport">{children}</main>
-            <div id="modal-root" />
-          </CartProvider>
+    <CartProvider>
+      <AppHeader />
+      <main className="max-h-viewport overflow-y-auto">
+        {children}
 
-          <Toaster />
-        </ThemeProvider>
-      </body>
-    </html>
+        <AppFooter />
+      </main>
+    </CartProvider>
   );
 }

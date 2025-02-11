@@ -38,9 +38,7 @@ export default function Home() {
 
       <Banner text="Our featured Brands" />
 
-      <Wrapper>
-        <BrandContainer />
-      </Wrapper>
+      <BrandContainer />
     </React.Fragment>
   );
 }
