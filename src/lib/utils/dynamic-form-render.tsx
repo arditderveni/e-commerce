@@ -23,8 +23,6 @@ const dynamicFormRender = <T extends FieldValues>({
   submitHandler,
   className = "",
 }: DynamicFormRenderParams<T>): JSX.Element => {
-  console.log("DYNAMIC FORM CLASSNAME : ", className);
-
   return (
     <FormProvider {...form}>
       <form

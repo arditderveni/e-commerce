@@ -5,15 +5,15 @@ const LoginSkeleton: React.FC = () => {
   return (
     <div className="p-4 flex flex-row max-w-[400px] flex-wrap space-y-4 border-1 border-card">
       <div className="space-y-2 w-full">
-        <Skeleton className="w-24 h-6" />
-        <Skeleton className="w-full h-8" />
+        <Skeleton className="w-24 h-6 bg-accent" />
+        <Skeleton className="w-full h-8 bg-accent" />
       </div>
       <div className="space-y-2 w-full">
-        <Skeleton className="w-24 h-6" />
-        <Skeleton className="w-full h-8" />
+        <Skeleton className="w-24 h-6 bg-accent" />
+        <Skeleton className="w-full h-8 bg-accent" />
       </div>
 
-      <Skeleton className="w-32 h-8" />
+      <Skeleton className="w-32 h-8 bg-accent" />
     </div>
   );
 };

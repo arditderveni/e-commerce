@@ -892,6 +892,7 @@ declare global {
     itemClassName?: string;
     overflowVisible?: boolean;
     sliderClassName?: string;
+    hasButtons?: boolean;
   }
 
   interface CarouselContentProps extends HTMLAttributes<HTMLDivElement> {

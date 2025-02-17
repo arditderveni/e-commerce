@@ -1,7 +1,11 @@
+"use client";
+
 import React from "react";
 import FooterColumn from "./footer-column";
 import { cn } from "@/lib/utils";
 import SmallPrint from "@/components/common/fine-print";
+import dynamic from "next/dynamic";
+import { useIsMobile } from "@/hooks";
 
 const Logo = ({ className }: { className: string }) => (
   <div className={cn("text-xl font-bold", className)}>Logo</div>
@@ -79,7 +83,15 @@ const smallPrint = [
   "Terms of Service",
 ];
 
+const MobileFooter = dynamic(() => import("@/components/global/mobile-footer"));
+
 const AppFooter: React.FC = () => {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <MobileFooter />;
+  }
+
   return (
     <footer className="bg-header-background mt-auto p-4 divide-y-1 space-y-4 border-t-inherit ">
       <div className="flex justify-between">

@@ -8,6 +8,17 @@ interface Props {
   button?: ReactNode;
 }
 
+/**
+ * SectionHeader component renders a header section with a title, optional breadcrumb, and an optional button.
+ *
+ * @component
+ * @param {Props} props - The props for the SectionHeader component.
+ * @param {string} props.title - The title to be displayed in the header.
+ * @param {string} [props.className] - Additional class names to style the header.
+ * @param {React.ReactNode} [props.breadcrumb] - Optional breadcrumb component to be displayed.
+ * @param {React.ReactNode} [props.button] - Optional button component to be displayed.
+ * @returns {JSX.Element} The rendered SectionHeader component.
+ */
 const SectionHeader: React.FC<Props> = ({
   title,
   className,

@@ -30,7 +30,12 @@ const BrandContainer: React.FC<Props> = ({ className }) => {
 
   return (
     <Wrapper className={cn(className)}>
-      <Carousel items={brands} overflowVisible sliderClassName="my-auto" />
+      <Carousel
+        items={brands}
+        overflowVisible
+        sliderClassName="my-auto"
+        hasButtons
+      />
     </Wrapper>
   );
 };

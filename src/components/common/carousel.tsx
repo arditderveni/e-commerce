@@ -1,5 +1,15 @@
-import { CarouselComp, CarouselContent, CarouselItem } from "../ui";
+"use client";
+
+import Autoplay from "embla-carousel-autoplay";
+import {
+  CarouselComp,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrev,
+} from "../ui";
 import { cn } from "@/lib/utils";
+import { Fragment } from "react";
 
 const Carousel: React.FC<Carousel> = ({
   className,
@@ -8,23 +18,43 @@ const Carousel: React.FC<Carousel> = ({
   orientation,
   overflowVisible,
   sliderClassName,
+  hasButtons,
 }) => {
+  // console.log("Progress : ", progress);
+
   return (
-    <CarouselComp className={cn(className)} orientation={orientation}>
+    <CarouselComp
+      className={cn(className)}
+      orientation={orientation}
+      plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
+    >
       <CarouselContent
-        className="overflow-visible"
+        className="md:overflow-y-visible"
         overflowVisible={overflowVisible}
         sliderClassName={sliderClassName}
       >
         {items.map((item, index) => (
           <CarouselItem
             key={`carousel-item-${index}`}
-            className={cn("md:basis-1/2 lg:basis-1/3", itemClassName)}
+            className={cn(
+              "sm:basis-1 md:basis-1/2 lg:basis-1/3",
+              itemClassName
+            )}
           >
             {item}
           </CarouselItem>
         ))}
       </CarouselContent>
+      {hasButtons && (
+        <Fragment>
+          <CarouselNext />
+          <CarouselPrev />
+        </Fragment>
+      )}
     </CarouselComp>
   );
 };

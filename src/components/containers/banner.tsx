@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import React from "react";
 import RedirectButton from "../common/redirect-button";

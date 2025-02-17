@@ -1,5 +1,4 @@
 import React from "react";
-import { GridContainer } from "../layout";
 import { Carousel, Review } from "../common";
 interface Props {
   reviews: Review[];

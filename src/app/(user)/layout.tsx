@@ -1,8 +1,14 @@
+import { AppHeader } from "@/components/global";
 import { Wrapper } from "@/components/layout";
-import React from "react";
+import React, { Fragment } from "react";
 
 const UserLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+  return (
+    <Fragment>
+      <AppHeader />
+      <Wrapper>{children}</Wrapper>
+    </Fragment>
+  );
 };
 
 export default UserLayout;

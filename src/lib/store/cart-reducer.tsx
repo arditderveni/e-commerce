@@ -33,8 +33,6 @@ const cartReducer: CartReducer = (state, action) => {
       // Save to localStorage
       localStorage.setItem("cart", JSON.stringify(updatedState));
 
-      console.log("Item added to cart", action.item);
-
       toast("Item added to cart", {
         description: `${action.item.name}, ${action.item.quantity} units ${action.item.price} each`,
         action: {

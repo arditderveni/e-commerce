@@ -27,7 +27,7 @@ const signupSchema = z
           return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
         }
         return true;
-      }, "Invalid date for a leap year"),
+      }, "Invalid date"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",

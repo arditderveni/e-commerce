@@ -1,14 +1,15 @@
 import React from "react";
 import { AvatarComp, AvatarFallback, AvatarImage } from "../ui";
-import { userInitials } from "@/lib/utils";
+import { cn, userInitials } from "@/lib/utils";
 interface Props {
   src: string;
   alt: string;
+  className?: string;
 }
 
-const Avatar: React.FC<Props> = ({ src, alt }) => {
+const Avatar: React.FC<Props> = ({ src, alt, className }) => {
   return (
-    <AvatarComp className="h-8 w-8 rounded-lg">
+    <AvatarComp className={cn("h-8 w-8 rounded-lg", className)}>
       <AvatarImage src={src} alt={alt} />
       <AvatarFallback className="rounded-lg">
         {userInitials(alt)}
