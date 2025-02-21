@@ -1,6 +1,6 @@
 import "../globals.css";
 import { AppFooter, AppHeader } from "@/components/global";
-import { CartProvider } from "@/lib/store/cart-provider";
+import { CartProvider } from "@/lib/providers/cart-provider";
 
 export default function RootLayout({
   children,

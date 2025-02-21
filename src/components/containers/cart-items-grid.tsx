@@ -4,7 +4,7 @@ import React, { useContext, useMemo } from "react";
 import GridContainer from "../layout/grid-container";
 // import useCartContext from "@/hooks/use-cart-context";
 import { CartItemCard } from "../common";
-import CartContext from "@/lib/store/cart-context";
+import CartContext from "@/lib/store/cart/cart-context";
 
 const CartItemsGrid: React.FC = ({}) => {
   //   const { items } = useCartContext();

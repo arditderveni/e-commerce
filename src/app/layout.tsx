@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/global";
-import { CartProvider } from "@/lib/store/cart-provider";
+import { ReactQueryProvider } from "@/lib/providers";
+import { CartProvider } from "@/lib/providers/cart-provider";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -113,13 +114,15 @@ export default function RootLayout({
           storageKey="theme"
           enableSystem
         >
-          <CartProvider>
-            {/* <AppHeader /> */}
-            <main className="max-h-viewport">{children}</main>
-            <div id="modal-root" />
-          </CartProvider>
+          <ReactQueryProvider>
+            <CartProvider>
+              {/* <AppHeader /> */}
+              <main className="max-h-viewport">{children}</main>
+              <div id="modal-root" />
+            </CartProvider>
 
-          <Toaster />
+            <Toaster />
+          </ReactQueryProvider>
         </ThemeProvider>
       </body>
     </html>

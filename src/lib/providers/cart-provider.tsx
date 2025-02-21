@@ -1,8 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect, useReducer } from "react";
-import CartContext from "./cart-context";
-import cartReducer from "./cart-reducer";
+import { CartContext, cartReducer } from "../store";
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
