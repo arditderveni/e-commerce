@@ -4,6 +4,25 @@ import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+/**
+ * A React functional component that displays a card with hoverable content.
+ *
+ * @component
+ * @param {HoverCardProps} props - The properties for the HoverCard component.
+ * @param {string} props.text - The text to display inside the hoverable content.
+ * @param {React.ReactNode} props.children - The children elements to display inside the card.
+ * @param {string} [props.className] - Additional class names to apply to the card.
+ * @param {React.ReactNode} [props.hoverChildren] - Additional elements to display inside the hoverable content.
+ *
+ * @example
+ * ```tsx
+ * <HoverCard text="Hover me!" className="custom-class">
+ *   <p>Card Content</p>
+ * </HoverCard>
+ * ```
+ *
+ * @returns {JSX.Element} The rendered HoverCard component.
+ */
 const HoverCard: React.FC<HoverCardProps> = ({
   text,
   children,

@@ -2,13 +2,24 @@
 
 import React, { useContext, useMemo } from "react";
 import GridContainer from "../layout/grid-container";
-// import useCartContext from "@/hooks/use-cart-context";
 import { CartItemCard } from "../common";
 import CartContext from "@/lib/store/cart/cart-context";
 
+/**
+ * CartItemsGrid component renders a grid of cart items.
+ *
+ * This component uses the `CartContext` to retrieve the items in the cart and
+ * maps over them to create a list of `CartItemCard` components. The grid layout
+ * is responsive, adjusting the number of columns based on the screen size.
+ *
+ * @component
+ * @example
+ * // Usage example:
+ * <CartItemsGrid />
+ *
+ * @returns {JSX.Element} A grid container with cart item cards.
+ */
 const CartItemsGrid: React.FC = ({}) => {
-  //   const { items } = useCartContext();
-
   const { items } = useContext(CartContext);
 
   const cartItems = useMemo(() => {

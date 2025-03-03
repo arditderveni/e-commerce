@@ -15,11 +15,33 @@ import {
   SizePicker,
   QuantityButton,
   WishHeart,
-} from ".";
+} from "../common";
 import Image from "next/image";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
+/**
+ * ProductCard component displays a product with its details and allows users to interact with it.
+ *
+ * @component
+ * @param {ProductCardProps} props - The properties for the ProductCard component.
+ * @param {string} props.name - The name of the product.
+ * @param {number} props.price - The price of the product.
+ * @param {string} props.image - The URL of the product image.
+ * @param {string[]} props.colors - The available colors for the product.
+ * @param {string[]} props.sizes - The available sizes for the product.
+ * @param {string} props.description - The description of the product.
+ * @param {string[]} props.ingredients - The ingredients of the product.
+ * @param {string[]} props.features - The features of the product.
+ * @param {string} [props.className] - Additional class names for styling.
+ * @param {React.Ref} [props.ref] - Reference to the component.
+ * @param {string} props.id - The unique identifier for the product.
+ * @param {boolean} [props.wishListed=false] - Indicates if the product is wishlisted.
+ * @param {string} props.variant - The variant of the product card (e.g., "shop").
+ * @param {function} props.addItem - Function to add the product to the cart.
+ *
+ * @returns {JSX.Element} The rendered ProductCard component.
+ */
 const ProductCard: FC<ProductCardProps> = ({
   name,
   price,

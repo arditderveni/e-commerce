@@ -3,6 +3,14 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
+/**
+ * A component that toggles between dark and light themes.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.iconClassName=""] - Optional additional class names for the icons.
+ *
+ * @returns {JSX.Element} The rendered ModeToggle component.
+ */
 function ModeToggle({ iconClassName = "" }: { iconClassName?: string }) {
   const { setTheme, theme } = useTheme();
 

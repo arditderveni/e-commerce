@@ -6,6 +6,22 @@ interface Props {
   children: React.ReactNode;
 }
 
+/**
+ * SidebarItem component that renders its children and handles sidebar toggle on mobile devices.
+ *
+ * @component
+ * @param {Props} props - The properties passed to the component.
+ * @param {React.ReactNode} props.children - The child elements to be rendered inside the SidebarItem.
+ * @returns {JSX.Element} The rendered SidebarItem component.
+ *
+ * @example
+ * <SidebarItem>
+ *   <p>Item 1</p>
+ * </SidebarItem>
+ *
+ * @remarks
+ * This component uses the `useSidebar` hook to determine if the device is mobile and to toggle the sidebar.
+ */
 const SidebarItem: React.FC<Props> = ({ children }) => {
   const { isMobile, toggleSidebar } = useSidebar();
 

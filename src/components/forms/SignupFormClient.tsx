@@ -4,6 +4,30 @@ import { signupSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+/**
+ * SignupFormClient component renders a signup form with various input fields.
+ * It uses react-hook-form for form handling and validation with Zod schema.
+ *
+ * @component
+ * @param {SignupFormProps} props - The props for the SignupFormClient component.
+ * @param {function} props.onSubmit - The function to handle form submission.
+ *
+ * @returns {JSX.Element} The rendered signup form component.
+ *
+ * @example
+ * <SignupFormClient onSubmit={handleSignup} />
+ *
+ * @typedef {Object} SignupFormProps
+ * @property {function} onSubmit - The function to handle form submission.
+ *
+ * @typedef {Object} SignUpFormData
+ * @property {string} name - The user's first name.
+ * @property {string} surname - The user's surname.
+ * @property {string} email - The user's email address.
+ * @property {string} password - The user's password.
+ * @property {string} confirmPassword - The user's password confirmation.
+ * @property {Date} birthDate - The user's birth date.
+ */
 const SignupFormClient: React.FC<SignupFormProps> = ({ onSubmit }) => {
   const form = useForm<SignUpFormData>({
     resolver: zodResolver(signupSchema),

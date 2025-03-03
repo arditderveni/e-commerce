@@ -8,6 +8,21 @@ import React, {
   useState,
 } from "react";
 
+/**
+ * StarRating component renders a star-based rating system.
+ *
+ * @component
+ * @param {StarRatingProps} props - The props for the StarRating component.
+ * @param {number} props.rating - The initial rating value.
+ * @param {boolean} props.ratable - Determines if the rating is interactive.
+ * @param {string} [props.className] - Additional CSS classes for the container.
+ * @param {React.Ref} [props.ref] - Ref object to access the component's imperative methods.
+ *
+ * @returns {JSX.Element} The rendered star rating component.
+ *
+ * @example
+ * <StarRating rating={3} ratable={true} className="my-custom-class" />
+ */
 const StarRating: React.FC<StarRatingProps> = ({
   rating,
   ratable,

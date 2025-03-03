@@ -3,6 +3,28 @@
 import { ReactNode, useEffect, useReducer } from "react";
 import { CartContext, cartReducer } from "../store";
 
+/**
+ * CartProvider component that provides cart state and actions to its children.
+ *
+ * This component uses the React Context API to manage the cart state and actions.
+ * It initializes the cart state from localStorage if available, and syncs the state
+ * back to localStorage on updates.
+ *
+ * @param {ReactNode} children - The child components that will have access to the cart context.
+ *
+ * @returns {JSX.Element} The CartContext.Provider component with the cart context value.
+ *
+ * @example
+ * ```tsx
+ * import { CartProvider } from './path/to/cart-provider';
+ *
+ * const App = () => (
+ *   <CartProvider>
+ *     <YourComponent />
+ *   </CartProvider>
+ * );
+ * ```
+ */
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {

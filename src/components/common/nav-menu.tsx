@@ -14,6 +14,16 @@ import {
 } from "../ui/navigation-menu";
 import Link from "next/link";
 
+/**
+ * NavMenu component renders a navigation menu based on the current path.
+ * It uses static data to render the nav menu items and does not fetch data from the server.
+ *
+ * @component
+ * @param {NavMenuProps} props - The properties object.
+ * @param {string} props.pathname - The current path used to determine which nav items to display.
+ *
+ * @returns {JSX.Element} The rendered navigation menu component.
+ */
 const NavMenu: React.FC<NavMenuProps> = ({ pathname }) => {
   /**Add logic here to implement data fetching for the necessary nav menu items based on the current path
    * However in this case, we are using static data and we may not need to fetch data from the server

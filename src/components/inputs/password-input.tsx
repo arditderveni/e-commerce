@@ -13,6 +13,19 @@ import {
 import { Input } from "../ui/input";
 import { Eye, EyeOff } from "lucide-react";
 
+/**
+ * PasswordInput component renders a password input field with an optional label, description, and visibility toggle.
+ *
+ * @template T - The type of the form values.
+ * @param {Object} props - The properties object.
+ * @param {UseFormReturn<T>} props.form - The form object returned by `useForm` from `react-hook-form`.
+ * @param {Path<T>} props.name - The name of the field.
+ * @param {string} props.label - The label for the input field.
+ * @param {string} [props.description] - The description for the input field.
+ * @param {string} [props.className] - Additional class names for the form item.
+ * @param {string} [props.autoComplete] - The autocomplete attribute for the input field.
+ * @returns {JSX.Element} The rendered password input component.
+ */
 const PasswordInput = <T extends FieldValues>({
   form,
   name,

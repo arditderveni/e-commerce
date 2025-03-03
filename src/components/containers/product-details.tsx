@@ -17,6 +17,34 @@ interface Props {
   className?: string;
 }
 
+/**
+ * Component for displaying detailed information about a product.
+ *
+ * @component
+ * @param {Props} props - The properties object.
+ * @param {Product} props.product - The product object containing details to display.
+ * @param {string} [props.className] - Additional class names for styling.
+ *
+ * @returns {JSX.Element} The rendered component.
+ *
+ * @example
+ * <ProductDetails product={product} className="custom-class" />
+ *
+ * @typedef {Object} Props
+ * @property {Product} product - The product object containing details to display.
+ * @property {string} [className] - Additional class names for styling.
+ *
+ * @typedef {Object} Product
+ * @property {string} name - The name of the product.
+ * @property {string} description - The description of the product.
+ * @property {number} price - The price of the product.
+ * @property {string[]} sizes - The available sizes for the product.
+ * @property {string[]} colors - The available colors for the product.
+ * @property {string} ingredients - The ingredients of the product.
+ * @property {string} features - The features of the product.
+ * @property {string} id - The unique identifier of the product.
+ * @property {string} image - The image URL of the product.
+ */
 const ProductDetails: React.FC<Props> = ({ product, className }) => {
   const { name, description, price, sizes, colors, ingredients, features } =
     product;

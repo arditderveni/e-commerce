@@ -9,6 +9,25 @@ import {
   SelectValue,
 } from "../ui/select";
 
+/**
+ * A custom Select component that renders a dropdown menu with selectable options.
+ *
+ * @component
+ * @param {object} props - The properties object.
+ * @param {string} [props.placeholder=""] - The placeholder text for the select input.
+ * @param {string} [props.label=""] - The label for the select group.
+ * @param {Array<{label: string, value: string}>} [props.options=[]] - The options to display in the dropdown.
+ * @param {string} [props.className] - Additional class names for the select content.
+ * @param {function} [props.onChange] - Callback function to handle the change event.
+ *
+ * @example
+ * <Select
+ *   placeholder="Select an option"
+ *   label="Options"
+ *   options={[{ label: 'Option 1', value: '1' }, { label: 'Option 2', value: '2' }]}
+ *   onChange={(value) => console.log(value)}
+ * />
+ */
 const Select: React.FC<SelectProps> = ({
   placeholder = "",
   label = "",

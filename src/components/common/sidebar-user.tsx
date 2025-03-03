@@ -31,6 +31,29 @@ import {
 import { userInitials } from "@/lib/utils";
 import Link from "next/link";
 
+/**
+ * SidebarUser component renders a sidebar menu with user profile information and a dropdown menu.
+ *
+ * @param {Object} props - The component props.
+ * @param {User} props.user - The user object containing user details.
+ *
+ * @returns {JSX.Element} The rendered SidebarUser component.
+ *
+ * @component
+ *
+ * @example
+ * // Example usage:
+ * <SidebarUser user={currentUser} />
+ *
+ * @remarks
+ * This component uses several custom components such as SidebarMenu, SidebarMenuItem, DropdownMenuComp,
+ * DropdownMenuTrigger, SidebarMenuButton, AvatarComp, AvatarImage, AvatarFallback, DropdownMenuContent,
+ * DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem, and Link.
+ *
+ * The profile menu items are dynamically generated from the `profileMenuItems` array.
+ *
+ * The dropdown menu adjusts its position based on the `isMobile` state.
+ */
 function SidebarUser({ user }: { user: User }) {
   const { isMobile } = useSidebar();
 

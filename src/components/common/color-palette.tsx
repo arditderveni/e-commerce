@@ -5,6 +5,26 @@ import { FC, useImperativeHandle, useState } from "react";
 import { Tooltip } from "../common";
 import { ChevronUp } from "lucide-react";
 
+/**
+ * ColorPalette component allows users to select a color from a given list of colors.
+ * It displays the first three colors directly and the rest in a tooltip.
+ *
+ * @component
+ *
+ * @param {ColorPaletteProps} props - The properties for the ColorPalette component.
+ * @param {string[]} props.colors - An array of color strings to be displayed in the palette.
+ * @param {string} [props.className] - An optional className to apply to the container div.
+ * @param {React.Ref} [props.ref] - A ref to access the current selected color and setColor function.
+ *
+ * @returns {JSX.Element} The rendered ColorPalette component.
+ *
+ * @example
+ * ```tsx
+ * const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
+ *
+ * <ColorPalette colors={colors} className="my-color-palette" ref={colorPaletteRef} />
+ * ```
+ */
 const ColorPalette: FC<ColorPaletteProps> = ({ colors, className, ref }) => {
   const [color, setColor] = useState(colors[0]);
 

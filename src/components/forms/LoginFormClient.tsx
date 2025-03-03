@@ -6,6 +6,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 
+/**
+ * LoginFormClient component renders a login form with email and password fields.
+ * It uses `useForm` hook from `react-hook-form` with `zodResolver` for validation.
+ *
+ * @component
+ * @param {LoginFormProps} props - The props for the LoginFormClient component.
+ * @param {function} props.onSubmit - The function to handle form submission.
+ *
+ * @returns {JSX.Element} The rendered login form component.
+ *
+ * @example
+ * <LoginFormClient onSubmit={handleLogin} />
+ */
 const LoginFormClient: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const form = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),

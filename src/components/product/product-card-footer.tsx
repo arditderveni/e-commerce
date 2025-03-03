@@ -4,12 +4,29 @@ import React, { useCallback, useRef } from "react";
 import { Button, CardFooter } from "../ui";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { SizePicker, ColorPalette, QuantityButton } from ".";
+import { SizePicker, ColorPalette, QuantityButton } from "../common";
 
 interface Props extends ProductCardProps {
   name: string;
 }
 
+/**
+ * ProductCardFooter component renders the footer section of a product card.
+ * It includes size picker, color palette, quantity button, and an add to cart button.
+ *
+ * @component
+ * @param {Props} props - The properties object.
+ * @param {string} props.name - The name of the product.
+ * @param {string[]} props.sizes - The available sizes for the product.
+ * @param {string} props.image - The image URL of the product.
+ * @param {function} props.addItem - The function to add the item to the cart.
+ * @param {string} props.id - The unique identifier of the product.
+ * @param {number} props.price - The price of the product.
+ * @param {string[]} props.colors - The available colors for the product.
+ * @param {string} [props.className] - Additional class names for styling.
+ *
+ * @returns {JSX.Element} The rendered ProductCardFooter component.
+ */
 const ProductCardFooter: React.FC<Props> = ({
   name,
   sizes,

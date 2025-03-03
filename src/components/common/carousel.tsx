@@ -11,6 +11,19 @@ import {
 import { cn } from "@/lib/utils";
 import { Fragment } from "react";
 
+/**
+ * Carousel component that displays a list of items in a sliding carousel format.
+ *
+ * @param {string} className - Additional class names for the carousel container.
+ * @param {Array<any>} items - Array of items to be displayed in the carousel.
+ * @param {string} itemClassName - Additional class names for each carousel item.
+ * @param {string} orientation - Orientation of the carousel (e.g., horizontal or vertical).
+ * @param {boolean} overflowVisible - Flag to determine if overflow content should be visible.
+ * @param {string} sliderClassName - Additional class names for the slider.
+ * @param {boolean} hasButtons - Flag to determine if navigation buttons should be displayed.
+ *
+ * @returns {JSX.Element} The rendered carousel component.
+ */
 const Carousel: React.FC<Carousel> = ({
   className,
   items,
@@ -20,8 +33,6 @@ const Carousel: React.FC<Carousel> = ({
   sliderClassName,
   hasButtons,
 }) => {
-  // console.log("Progress : ", progress);
-
   return (
     <CarouselComp
       className={cn(className)}

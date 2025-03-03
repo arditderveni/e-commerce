@@ -28,6 +28,24 @@ const filters = [
   { title: "Best Sellers" },
 ];
 
+/**
+ * Filters component renders a list of filter options with checkboxes.
+ * It allows users to select and deselect filters, and manages the state of active filters.
+ *
+ * @component
+ * @param {Props} props - The props for the Filters component.
+ * @param {string} [props.className=""] - Optional additional class names for the component.
+ *
+ * @returns {JSX.Element} The rendered Filters component.
+ *
+ * @example
+ * <Filters className="custom-class" />
+ *
+ * @remarks
+ * This component uses the `useState` hook to manage the state of active filters,
+ * and the `useMemo` hook to memoize the list of filter elements.
+ * It also uses the `CollapseMenu` and `LabeledCheckbox` components to render the filter options.
+ */
 const Filters: React.FC<Props> = ({ className = "" }) => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 

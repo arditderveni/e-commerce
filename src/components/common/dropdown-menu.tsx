@@ -16,6 +16,19 @@ interface Props {
   dir: "ltr" | "rtl";
 }
 
+/**
+ * DropdownMenu component renders a dropdown menu with customizable options.
+ *
+ * @component
+ * @param {object} props - The properties object.
+ * @param {string} [props.className] - Additional class names to style the dropdown menu.
+ * @param {React.ReactNode} props.trigger - The element that triggers the dropdown menu.
+ * @param {string} [props.label] - The label displayed at the top of the dropdown menu.
+ * @param {string} [props.dir] - The direction in which the dropdown menu opens.
+ * @param {Array<React.ReactNode>} props.options - The list of options to be displayed in the dropdown menu.
+ *
+ * @returns {JSX.Element} The rendered DropdownMenu component.
+ */
 const DropdownMenu: React.FC<Props> = ({
   className,
   trigger,

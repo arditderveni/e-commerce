@@ -15,6 +15,19 @@ import {
 // import Link from "next/link";
 import { ModeToggle, SidebarUser } from "../common";
 
+/**
+ * AppSidebar component renders the sidebar for the application.
+ * It includes collapsible functionality, a menu with a trigger button,
+ * a mode toggle, user information, and a sidebar rail.
+ *
+ * @component
+ * @example
+ * return (
+ *   <AppSidebar />
+ * )
+ *
+ * @returns {JSX.Element} The rendered sidebar component.
+ */
 function AppSidebar() {
   return (
     <Sidebar {...{ collapsible: "icon" }}>

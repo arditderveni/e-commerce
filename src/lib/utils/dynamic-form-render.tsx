@@ -1,4 +1,4 @@
-import { FormInput, PasswordInput } from "@/components/common";
+import { FormInput, PasswordInput } from "@/components/inputs";
 
 import { Button } from "@/components/ui/button";
 import { JSX } from "react";

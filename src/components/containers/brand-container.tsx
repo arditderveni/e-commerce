@@ -6,6 +6,18 @@ interface Props {
   className?: string;
 }
 
+/**
+ * BrandContainer component renders a carousel of brand hover cards.
+ *
+ * @component
+ * @param {Props} props - The props for the BrandContainer component.
+ * @param {string} props.className - Additional class names to style the container.
+ *
+ * @returns {JSX.Element} The rendered BrandContainer component.
+ *
+ * @example
+ * <BrandContainer className="custom-class" />
+ */
 const BrandContainer: React.FC<Props> = ({ className }) => {
   const brands: ReactNode[] = useMemo(
     () => [

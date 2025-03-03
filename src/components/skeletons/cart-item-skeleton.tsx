@@ -14,11 +14,7 @@ const CartItemSkeleton: React.FC<Props> = ({ className }) => {
         className
       )}
     >
-      <ImageSkeleton
-        className="rounded-md w-[120px] h-[120px]"
-        width={120}
-        height={120}
-      />
+      <ImageSkeleton className="rounded-md w-[120px] h-[120px]" />
 
       <div className="space-y-2">
         <div className="flex gap-3">

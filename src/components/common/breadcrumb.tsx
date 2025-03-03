@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, useCallback, useMemo } from "react";
+import React, { Fragment, useMemo } from "react";
 import {
   BreadcrumbEllipsis,
   BreadcrumbItem,
@@ -9,27 +9,29 @@ import {
   BreadcrumbSeparator,
   Breadcrumb as Comp,
 } from "../ui/breadcrumb";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { capitalize } from "@/lib/utils";
-// import {
-//   DropdownMenuComp,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuTrigger,
-// } from "../ui/dropdown-menu";
 import DropdownMenu from "./dropdown-menu";
 
+/**
+ * Breadcrumb component that generates a breadcrumb navigation based on the current pathname.
+ *
+ * @returns A React functional component that renders the breadcrumb navigation.
+ *
+ * @remarks
+ * - Uses `usePathname` to get the current pathname and splits it into segments.
+ * - Uses `useMemo` to memoize the rendered breadcrumb items for performance optimization.
+ * - If the pathname has more than 3 segments, it renders a dropdown menu for the intermediate segments.
+ * - Capitalizes each segment for display purposes.
+ * - The last segment is rendered as plain text, while the intermediate segments are rendered as links.
+ *
+ * @example
+ * ```tsx
+ * <Breadcrumb />
+ * ```
+ */
 const Breadcrumb: React.FC = () => {
   const pathName = usePathname().split("/");
-
-  const router = useRouter();
-
-  const redirect = useCallback(
-    (index: number, routes: string[]) => {
-      router.push(`/${routes.slice(0, index + 1).join("/")}`);
-    },
-    [router]
-  );
 
   const renderedCrumbs = useMemo(() => {
     if (pathName.length > 3) {
@@ -46,26 +48,6 @@ const Breadcrumb: React.FC = () => {
               options={withoutLast.map((item) => capitalize(item))}
               dir="ltr"
             />
-            {/* <DropdownMenuComp>
-              <DropdownMenuTrigger className="flex items-center gap-1">
-                <BreadcrumbEllipsis className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
-                {withoutLast.map((item, index) => {
-                  const key = `${item}-${index}-${Math.floor(
-                    Math.random() * 100
-                  )}`;
-                  return (
-                    <DropdownMenuItem
-                      key={key}
-                      onClick={() => redirect(index, withoutLast)}
-                    >
-                      {capitalize(item)}
-                    </DropdownMenuItem>
-                  );
-                })}
-              </DropdownMenuContent>
-            </DropdownMenuComp> */}
           </BreadcrumbItem>
           <BreadcrumbSeparator />
 
@@ -94,7 +76,7 @@ const Breadcrumb: React.FC = () => {
         </Fragment>
       );
     });
-  }, [pathName, redirect]);
+  }, [pathName]);
 
   return (
     <Comp>

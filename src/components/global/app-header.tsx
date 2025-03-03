@@ -11,6 +11,15 @@ const Logo = () => <div className="text-xl font-bold">Logo</div>;
 const navElCn =
   "hover:bg-header-accent transition-colors ease-linear duration-300 px-2 py-1 rounded flex-1";
 
+/**
+ * The `AppHeader` component renders the header of the application.
+ * It conditionally renders different layouts based on the device type (mobile or desktop).
+ *
+ * - On mobile devices, it displays a simplified header with a logo and a mode toggle button.
+ * - On desktop devices, it displays a more complex header with navigation links, a mode toggle button, and user information.
+ *
+ * @returns {JSX.Element} The rendered header component.
+ */
 const AppHeader: React.FC = () => {
   const isMobile = useIsMobile();
 

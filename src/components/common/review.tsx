@@ -9,6 +9,22 @@ interface Props {
   ref?: React.Ref<HTMLDivElement>;
 }
 
+/**
+ * Review component displays a user's review including their name, avatar, rating, date, comment, and description.
+ *
+ * @component
+ * @param {Props} props - The props for the Review component.
+ * @param {Object} props.review - The review object containing user details and review content.
+ * @param {Object} props.review.user - The user object containing name and avatar.
+ * @param {string} props.review.user.name - The name of the user.
+ * @param {string} props.review.user.avatar - The URL of the user's avatar image.
+ * @param {number} props.review.rating - The rating given by the user.
+ * @param {Date} props.review.date - The date when the review was posted.
+ * @param {string} props.review.comment - The comment provided by the user.
+ * @param {string} props.review.description - The detailed description of the review.
+ * @param {string} [props.className] - Additional class names to style the component.
+ * @returns {JSX.Element} The rendered Review component.
+ */
 const Review: React.FC<Props> = ({ review, className }) => {
   const {
     user: { name, avatar },

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { GridContainer } from "../layout";
-import { ProductCard, HomeProductCard } from "../common";
+import { ProductCard, HomeProductCard } from "../product";
 import { cn } from "@/lib/utils";
 import { useCartContext } from "@/hooks";
 
@@ -11,6 +11,24 @@ interface Props {
   variant: "home" | "shop";
 }
 
+/**
+ * ProductGrid component renders a grid of product cards.
+ *
+ * @component
+ * @param {Props} props - The props for the component.
+ * @param {string} props.className - Additional class names for the grid container.
+ * @param {string} props.variant - The variant of the product grid, either "home" or "shop".
+ *
+ * @returns {JSX.Element} The rendered product grid.
+ *
+ * @example
+ * <ProductGrid className="my-custom-class" variant="home" />
+ *
+ * @remarks
+ * - The component uses mock data for products.
+ * - The number of products displayed is determined by the variant prop.
+ * - Uses `useCartContext` to get the `addItem` function.
+ */
 const ProductGrid: React.FC<Props> = ({ className, variant }) => {
   const { addItem } = useCartContext();
 
