@@ -17,15 +17,15 @@ interface Props {
  * A labeled checkbox component that supports different variants and sizes.
  *
  * @component
- * @param {object} props - The properties object.
- * @param {string} [props.className=""] - Additional class names to apply to the component.
- * @param {string} props.id - The unique identifier for the checkbox.
- * @param {boolean} props.checked - The checked state of the checkbox.
- * @param {function} props.onClick - The click event handler for the checkbox.
- * @param {React.ReactNode} props.children - The label content for the checkbox.
- * @param {"default" | "rounded" | "outline" | "bold"} [props.variant="default"] - The variant style of the checkbox.
- * @param {"default" | "sm" | "lg"} [props.size="default"] - The size of the checkbox.
- * @returns {JSX.Element} The rendered labeled checkbox component.
+ * @param props - The properties object.
+ * @param props.className - Additional class names to apply to the component.
+ * @param props.id - The unique identifier for the checkbox.
+ * @param props.checked - The checked state of the checkbox.
+ * @param props.onClick - The click event handler for the checkbox.
+ * @param props.children - The label content for the checkbox.
+ * @param props.variant - The variant style of the checkbox.
+ * @param props.size - The size of the checkbox.
+ * @returns The rendered labeled checkbox component.
  */
 const LabeledCheckbox: React.FC<Props> = ({
   className = "",

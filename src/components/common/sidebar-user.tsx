@@ -34,10 +34,10 @@ import Link from "next/link";
 /**
  * SidebarUser component renders a sidebar menu with user profile information and a dropdown menu.
  *
- * @param {Object} props - The component props.
- * @param {User} props.user - The user object containing user details.
+ * @param props - The component props.
+ * @param props.user - The user object containing user details.
  *
- * @returns {JSX.Element} The rendered SidebarUser component.
+ * @returns The rendered SidebarUser component.
  *
  * @component
  *

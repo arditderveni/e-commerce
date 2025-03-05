@@ -11,11 +11,11 @@ import React, { useState, useImperativeHandle, useEffect, useRef } from "react";
  * current theme (dark or light) and the wish-listed state.
  *
  * @component
- * @param {boolean} wishListed - Initial state indicating if the item is wish-listed.
- * @param {string} className - Additional class names for styling the heart icon.
- * @param {React.Ref} ref - A ref to access the wish-listed state and setWishListed function.
+ * @param wishListed - Initial state indicating if the item is wish-listed.
+ * @param className - Additional class names for styling the heart icon.
+ * @param ref - A ref to access the wish-listed state and setWishListed function.
  *
- * @returns {JSX.Element} The rendered heart icon component.
+ * @returns The rendered heart icon component.
  */
 const WishHeart: React.FC<WishHeartProps> = ({
   wishListed,

@@ -2,7 +2,8 @@
 
 import React, { useMemo, useState } from "react";
 import { capitalize, cn } from "@/lib/utils";
-import { CollapseMenu, ActiveFilters, LabeledCheckbox } from "../common";
+import { CollapseMenu, ActiveFilters } from "../common";
+import { LabeledCheckbox } from "../inputs";
 
 interface Props {
   className?: string;
@@ -33,10 +34,10 @@ const filters = [
  * It allows users to select and deselect filters, and manages the state of active filters.
  *
  * @component
- * @param {Props} props - The props for the Filters component.
- * @param {string} [props.className=""] - Optional additional class names for the component.
+ * @param props - The props for the Filters component.
+ * @param props.className - Optional additional class names for the component.
  *
- * @returns {JSX.Element} The rendered Filters component.
+ * @returns The rendered Filters component.
  *
  * @example
  * <Filters className="custom-class" />

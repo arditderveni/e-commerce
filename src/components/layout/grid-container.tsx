@@ -4,11 +4,11 @@ import React from "react";
 /**
  * GridContainer component that arranges its children in a responsive grid layout.
  *
- * @param {WrapperProps} props - The properties passed to the component.
- * @param {React.ReactNode} props.children - The child elements to be rendered within the grid.
- * @param {string} [props.className=""] - Additional class names to apply to the grid container.
+ * @param props - The properties passed to the component.
+ * @param props.children - The child elements to be rendered within the grid.
+ * @param props.className - Additional class names to apply to the grid container.
  *
- * @returns {JSX.Element} A div element with a responsive grid layout.
+ * @returns A div element with a responsive grid layout.
  */
 const GridContainer: React.FC<WrapperProps> = ({
   children,

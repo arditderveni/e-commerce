@@ -15,7 +15,7 @@ import { useCartContext } from "@/hooks";
  * // Usage example:
  * <ClearCartButton />
  *
- * @returns {JSX.Element} A button element that clears the cart.
+ * @returns A button element that clears the cart.
  */
 const ClearCartButton = () => {
   const { clearCart } = useCartContext();

@@ -14,20 +14,14 @@ type handleValueChangeType = ({
  * QuantityButton component allows users to increase or decrease the quantity of a product.
  *
  * @component
- * @param {QuantityButtonProps} props - The props for the QuantityButton component.
- * @param {React.Ref} props.ref - A ref object to access the quantity and setQuantity methods.
+ * @param props - The props for the QuantityButton component.
+ * @param props.ref - A ref object to access the quantity and setQuantity methods.
  *
- * @returns {JSX.Element} The rendered QuantityButton component.
+ * @returns The rendered QuantityButton component.
  *
  * @example
  * <QuantityButton ref={quantityRef} />
  *
- * @typedef {Object} QuantityButtonProps
- * @property {React.Ref} ref - A ref object to access the quantity and setQuantity methods.
- *
- * @typedef {Object} handleValueChangeType
- * @property {number} [value] - The value to set the quantity to.
- * @property {string} type - The type of change to make ("add" or "subtract").
  */
 const QuantityButton: React.FC<QuantityButtonProps> = ({ ref }) => {
   const [quantity, setQuantity] = useState(0);

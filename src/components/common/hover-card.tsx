@@ -8,11 +8,12 @@ import { cn } from "@/lib/utils";
  * A React functional component that displays a card with hoverable content.
  *
  * @component
- * @param {HoverCardProps} props - The properties for the HoverCard component.
- * @param {string} props.text - The text to display inside the hoverable content.
- * @param {React.ReactNode} props.children - The children elements to display inside the card.
- * @param {string} [props.className] - Additional class names to apply to the card.
- * @param {React.ReactNode} [props.hoverChildren] - Additional elements to display inside the hoverable content.
+ * @param props - The properties for the HoverCard component.
+ * @param props.text - The text to display inside the hoverable content.
+ * @param props.children - The children elements to display inside the card.
+ * @param props.className - Additional class names to apply to the card.
+ * @param props.hoverChildren - Additional elements to display inside the hoverable content.
+ * @param props.onClick - The function to call when the card is clicked.
  *
  * @example
  * ```tsx
@@ -28,6 +29,7 @@ const HoverCard: React.FC<HoverCardProps> = ({
   children,
   className,
   hoverChildren,
+  onClick = () => {},
 }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -42,6 +44,7 @@ const HoverCard: React.FC<HoverCardProps> = ({
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
     >
       {children}
       <div

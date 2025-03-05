@@ -5,14 +5,14 @@ import { Input } from "../ui/input";
  * A dynamic input component that renders different types of inputs based on the `type` prop.
  *
  * @component
- * @param {Object} props - The props object.
- * @param {string} props.type - The type of the input, e.g., "text", "date", etc.
- * @param {function} props.onChange - The function to call when the input value changes.
- * @param {string} [props.placeholder] - The placeholder text for the input.
- * @param {string} [props.ariaLabel] - The aria-label attribute for accessibility.
- * @param {string} [props.className] - Additional CSS classes to apply to the input.
- * @param {Object} [props.props] - Additional props to spread onto the input element.
- * @returns {JSX.Element} The rendered input component.
+ * @param props - The props object.
+ * @param props.type - The type of the input, e.g., "text", "date", etc.
+ * @param props.onChange - The function to call when the input value changes.
+ * @param props.placeholder - The placeholder text for the input.
+ * @param props.ariaLabel - The aria-label attribute for accessibility.
+ * @param props.className - Additional CSS classes to apply to the input.
+ * @param props.props - Additional props to spread onto the input element.
+ * @returns The rendered input component.
  */
 const DynamicInput: React.FC<DynamicInputProps> = ({
   type,

@@ -5,15 +5,6 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/**
- * Props for the CollapseMenu component.
- *
- * @interface Props
- * @property {React.ReactNode} children - The content to be displayed inside the collapse menu.
- * @property {string} [className] - Optional additional class names for the collapse menu container.
- * @property {string} title - The title of the collapse menu.
- * @property {string} [titleClassName] - Optional additional class names for the title element.
- */
 interface Props {
   children: React.ReactNode;
   className?: string;
@@ -21,6 +12,16 @@ interface Props {
   titleClassName?: string;
 }
 
+/**
+ * CollapseMenu component renders a collapsible menu with a trigger and content.
+ *
+ * @param children - The content to be displayed inside the collapsible menu.
+ * @param className - Additional class names to style the collapsible container.
+ * @param title - The title to be displayed on the collapsible trigger.
+ * @param titleClassName - Additional class names to style the title.
+ *
+ * @returns A collapsible menu component with a trigger that toggles the visibility of the content.
+ */
 const CollapseMenu: React.FC<Props> = ({
   children,
   className,

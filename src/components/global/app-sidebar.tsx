@@ -26,7 +26,7 @@ import { ModeToggle, SidebarUser } from "../common";
  *   <AppSidebar />
  * )
  *
- * @returns {JSX.Element} The rendered sidebar component.
+ * @returns The rendered sidebar component.
  */
 function AppSidebar() {
   return (

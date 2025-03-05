@@ -10,9 +10,9 @@ interface Props {
  * SidebarItem component that renders its children and handles sidebar toggle on mobile devices.
  *
  * @component
- * @param {Props} props - The properties passed to the component.
- * @param {React.ReactNode} props.children - The child elements to be rendered inside the SidebarItem.
- * @returns {JSX.Element} The rendered SidebarItem component.
+ * @param props - The properties passed to the component.
+ * @param props.children - The child elements to be rendered inside the SidebarItem.
+ * @returns The rendered SidebarItem component.
  *
  * @example
  * <SidebarItem>

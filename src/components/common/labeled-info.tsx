@@ -11,11 +11,11 @@ interface Props {
  * A React functional component that displays labeled information.
  *
  * @component
- * @param {Object} props - The props object.
- * @param {string} props.label - The label text to display.
- * @param {string} props.info - The information text to display.
- * @param {string} [props.className] - Optional additional class names to apply to the container.
- * @returns {JSX.Element} The rendered component.
+ * @param props - The props object.
+ * @param props.label - The label text to display.
+ * @param props.info - The information text to display.
+ * @param props.className - Optional additional class names to apply to the container.
+ * @returns The rendered component.
  */
 const LabeledInfo: React.FC<Props> = ({ label, info, className }) => {
   return (

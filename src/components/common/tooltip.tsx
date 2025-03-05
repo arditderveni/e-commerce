@@ -16,11 +16,11 @@ interface Props {
  * Tooltip component that provides a tooltip functionality with customizable delay.
  *
  * @component
- * @param {Object} props - The properties object.
- * @param {string} [props.className] - Optional class name for the tooltip content.
- * @param {React.ReactNode} props.trigger - The element that triggers the tooltip.
- * @param {React.ReactNode} props.children - The content to be displayed inside the tooltip.
- * @param {number} [props.delay=500] - The delay in milliseconds before the tooltip is shown.
+ * @param props - The properties object.
+ * @param props.className - Optional class name for the tooltip content.
+ * @param props.trigger - The element that triggers the tooltip.
+ * @param props.children - The content to be displayed inside the tooltip.
+ * @param props.delay - The delay in milliseconds before the tooltip is shown.
  *
  * @example
  * <Tooltip trigger={<button>Hover me</button>} delay={300}>

@@ -11,10 +11,10 @@ import { useForm } from "react-hook-form";
  * It uses `useForm` hook from `react-hook-form` with `zodResolver` for validation.
  *
  * @component
- * @param {LoginFormProps} props - The props for the LoginFormClient component.
- * @param {function} props.onSubmit - The function to handle form submission.
+ * @param props - The props for the LoginFormClient component.
+ * @param props.onSubmit - The function to handle form submission.
  *
- * @returns {JSX.Element} The rendered login form component.
+ * @returns The rendered login form component.
  *
  * @example
  * <LoginFormClient onSubmit={handleLogin} />

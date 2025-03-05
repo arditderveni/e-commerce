@@ -8,10 +8,10 @@ import { queryClient } from "../store";
 /**
  * ReactQueryProvider component that sets up the React Query client and provides it to the application.
  *
- * @param {Object} props - The props object.
- * @param {ReactNode} props.children - The child components to be wrapped by the QueryClientProvider.
+ * @param props - The props object.
+ * @param props.children - The child components to be wrapped by the QueryClientProvider.
  *
- * @returns {JSX.Element} The QueryClientProvider component with the provided client and children.
+ * @returns The QueryClientProvider component with the provided client and children.
  */
 function ReactQueryProvider({ children }: { children: ReactNode }) {
   const [client] = useState(() => queryClient);

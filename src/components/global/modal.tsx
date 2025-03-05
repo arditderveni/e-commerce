@@ -14,9 +14,9 @@ type ModalProps = {
  * Modal component that renders its children inside a portal.
  * It is displayed only when `isOpen` is true and the component is rendered in the browser.
  *
- * @param {boolean} isOpen - Determines whether the modal is open or not.
- * @param {() => void} onClose - Function to call when the modal is requested to be closed.
- * @param {React.ReactNode} children - The content to be displayed inside the modal.
+ * @param isOpen - Determines whether the modal is open or not.
+ * @param onClose - Function to call when the modal is requested to be closed.
+ * @param children - The content to be displayed inside the modal.
  *
  * @returns {React.ReactPortal | null} The modal content rendered in a portal or null if not open or not in the browser.
  */

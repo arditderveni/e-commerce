@@ -10,14 +10,14 @@ interface Props {
  * UserDetails component displays detailed information about a user.
  *
  * @component
- * @param {Props} props - The properties object.
- * @param {Object} props.user - The user object containing user details.
- * @param {string} props.user.avatar - The URL of the user's avatar image.
- * @param {string} props.user.name - The name of the user.
- * @param {string} props.user.email - The email address of the user.
- * @param {string} props.user.id - The unique identifier of the user.
+ * @param props - The properties object.
+ * @param props.user - The user object containing user details.
+ * @param props.user.avatar - The URL of the user's avatar image.
+ * @param props.user.name - The name of the user.
+ * @param props.user.email - The email address of the user.
+ * @param props.user.id - The unique identifier of the user.
  *
- * @returns {JSX.Element} A React component that displays user details including avatar, name, email, and links to orders and wishlist.
+ * @returns A React component that displays user details including avatar, name, email, and links to orders and wishlist.
  */
 const UserDetails: React.FC<Props> = ({ user }) => {
   return (

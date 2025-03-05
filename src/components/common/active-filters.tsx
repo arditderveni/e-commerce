@@ -13,9 +13,9 @@ interface Props {
  * ActiveFilters component displays a list of active filters and allows users to remove individual filters or clear all filters.
  *
  * @component
- * @param {string} className - Additional class names for styling the component.
- * @param {string[]} activeFilters - Array of active filters to be displayed.
- * @param {React.Dispatch<React.SetStateAction<string[]>>} setActiveFilters - Function to update the active filters state.
+ * @param className - Additional class names for styling the component.
+ * @param activeFilters - Array of active filters to be displayed.
+ * @param setActiveFilters - Function to update the active filters state.
  *
  * @example
  * const [filters, setFilters] = useState<string[]>(['filter1', 'filter2']);

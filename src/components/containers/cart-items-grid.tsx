@@ -17,7 +17,7 @@ import CartContext from "@/lib/store/cart/cart-context";
  * // Usage example:
  * <CartItemsGrid />
  *
- * @returns {JSX.Element} A grid container with cart item cards.
+ * @returns A grid container with cart item cards.
  */
 const CartItemsGrid: React.FC = ({}) => {
   const { items } = useContext(CartContext);

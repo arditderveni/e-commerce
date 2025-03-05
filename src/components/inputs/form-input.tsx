@@ -15,15 +15,15 @@ import { FieldValues, Path } from "react-hook-form";
  *
  * @template T - The type of the form values.
  *
- * @param {Object} props - The properties object.
- * @param {UseFormReturn<T>} props.form - The form instance from react-hook-form.
- * @param {Path<T>} props.name - The name of the field.
- * @param {string} props.label - The label for the input field.
- * @param {string} [props.description] - An optional description for the input field.
- * @param {Object} [props.inputProps] - Additional properties to pass to the input component.
- * @param {string} [props.className] - An optional class name to apply to the form item.
+ * @param props - The properties object.
+ * @param props.form - The form instance from react-hook-form.
+ * @param props.name - The name of the field.
+ * @param props.label - The label for the input field.
+ * @param props.description - An optional description for the input field.
+ * @param props.inputProps - Additional properties to pass to the input component.
+ * @param props.className - An optional class name to apply to the form item.
  *
- * @returns {JSX.Element} The rendered form input component.
+ * @returns The rendered form input component.
  */
 const FormInput = <T extends FieldValues>({
   form,

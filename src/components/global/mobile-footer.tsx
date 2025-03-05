@@ -17,10 +17,10 @@ interface Props {
  * It contains navigation links to various sections of the e-commerce application.
  *
  * @component
- * @param {Props} props - The properties that are passed to the component.
- * @param {string} props.className - Additional class names to style the footer.
+ * @param props - The properties that are passed to the component.
+ * @param props.className - Additional class names to style the footer.
  *
- * @returns {JSX.Element} The rendered footer component.
+ * @returns The rendered footer component.
  */
 const MobileFooter: React.FC<Props> = ({ className }) => {
   return (

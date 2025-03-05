@@ -6,10 +6,10 @@ import React from "react";
  * for its children elements. It applies padding, flexbox layout, and gap between
  * child elements.
  *
- * @param {string} [className=""] - Additional custom class names to apply to the container.
- * @param {React.ReactNode} children - The child elements to be rendered within the container.
+ * @param className - Additional custom class names to apply to the container.
+ * @param children - The child elements to be rendered within the container.
  *
- * @returns {JSX.Element} A div element with the specified classes and children.
+ * @returns A div element with the specified classes and children.
  */
 const FlexContainer: React.FC<WrapperProps> = ({
   className = "",

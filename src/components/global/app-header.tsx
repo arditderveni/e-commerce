@@ -18,7 +18,7 @@ const navElCn =
  * - On mobile devices, it displays a simplified header with a logo and a mode toggle button.
  * - On desktop devices, it displays a more complex header with navigation links, a mode toggle button, and user information.
  *
- * @returns {JSX.Element} The rendered header component.
+ * @returns The rendered header component.
  */
 const AppHeader: React.FC = () => {
   const isMobile = useIsMobile();

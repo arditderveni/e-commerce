@@ -13,12 +13,12 @@ import {
  * A custom Select component that renders a dropdown menu with selectable options.
  *
  * @component
- * @param {object} props - The properties object.
- * @param {string} [props.placeholder=""] - The placeholder text for the select input.
- * @param {string} [props.label=""] - The label for the select group.
- * @param {Array<{label: string, value: string}>} [props.options=[]] - The options to display in the dropdown.
- * @param {string} [props.className] - Additional class names for the select content.
- * @param {function} [props.onChange] - Callback function to handle the change event.
+ * @param props - The properties object.
+ * @param props.placeholder - The placeholder text for the select input.
+ * @param props.label - The label for the select group.
+ * @param props.options - The options to display in the dropdown.
+ * @param  props.className - Additional class names for the select content.
+ * @param  props.onChange - Callback function to handle the change event.
  *
  * @example
  * <Select

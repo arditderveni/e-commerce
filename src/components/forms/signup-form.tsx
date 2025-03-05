@@ -11,7 +11,7 @@ const SignupFormClient = dynamic(() => import("./SignupFormClient"), {
  * This component renders a signup form and handles form submission.
  *
  * @component
- * @returns {JSX.Element} The rendered signup form component.
+ * @returns The rendered signup form component.
  *
  * @example
  * // Usage example:
@@ -23,7 +23,7 @@ const SignupFormClient = dynamic(() => import("./SignupFormClient"), {
  *
  * @async
  * @function onSubmit
- * @param {SignUpFormData} data - The data submitted from the signup form.
+ * @param data - The data submitted from the signup form.
  * @returns {Promise<void>} A promise that resolves when the submission is complete.
  */
 const SignupForm: React.FC = () => {

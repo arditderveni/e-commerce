@@ -47,8 +47,8 @@ interface Props {
  * ReviewsBlock component renders a carousel of reviews.
  *
  * @component
- * @param {Props} props - The props for the ReviewsBlock component.
- * @returns {JSX.Element} The rendered ReviewsBlock component.
+ * @param props - The props for the ReviewsBlock component.
+ * @returns The rendered ReviewsBlock component.
  */
 const ReviewsBlock: React.FC<Props> = ({}) => {
   return (

@@ -11,7 +11,7 @@ import { SidebarTrigger, useSidebar } from "../ui/sidebar";
  * is a mobile device. If the device is not mobile or the sidebar is already open,
  * this component returns null and does not render anything.
  *
- * @returns {JSX.Element | null} The SidebarTrigger component if the device is mobile and the sidebar is closed, otherwise null.
+ * @returns The SidebarTrigger component if the device is mobile and the sidebar is closed, otherwise null.
  */
 const MobileSidebarTrigger: React.FC = () => {
   const { open, isMobile } = useSidebar();

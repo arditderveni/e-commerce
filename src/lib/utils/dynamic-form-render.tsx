@@ -9,12 +9,12 @@ import cn from "./classnames";
  * Renders a dynamic form based on the provided inputs and form configuration.
  *
  * @template T - The type of the field values.
- * @param {DynamicFormRenderParams<T>} params - The parameters for rendering the dynamic form.
- * @param {UseFormReturn<T>} params.form - The form instance from `react-hook-form`.
- * @param {Array<{ name: string; label: string; type: string; placeholder?: string }>} params.inputs - The array of input configurations.
- * @param {string} params.submitText - The text to display on the submit button.
- * @param {(values: T) => Promise} params.submitHandler - The handler function to call on form submission.
- * @returns {JSX.Element} The rendered dynamic form component.
+ * @param params - The parameters for rendering the dynamic form.
+ * @param params.form - The form instance from `react-hook-form`.
+ * @param params.inputs - The array of input configurations.
+ * @param params.submitText - The text to display on the submit button.
+ * @param params.submitHandler - The handler function to call on form submission.
+ * @returns The rendered dynamic form component.
  */
 const dynamicFormRender = <T extends FieldValues>({
   form,

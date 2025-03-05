@@ -7,10 +7,10 @@ import Image from "next/image";
  * Displays a skeleton image while the actual image is loading.
  *
  * @component
- * @param {Object} props - The properties passed to the component.
- * @param {number} props.width - The width of the image.
- * @param {number} props.height - The height of the image.
- * @returns {JSX.Element} The LoadingImage component.
+ * @param props - The properties passed to the component.
+ * @param props.width - The width of the image.
+ * @param props.height - The height of the image.
+ * @returns The LoadingImage component.
  */
 const LoadingImage: FC<ComponentProps<typeof Image>> = ({
   width,

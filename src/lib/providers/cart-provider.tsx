@@ -10,9 +10,9 @@ import { CartContext, cartReducer } from "../store";
  * It initializes the cart state from localStorage if available, and syncs the state
  * back to localStorage on updates.
  *
- * @param {ReactNode} children - The child components that will have access to the cart context.
+ * @param children - The child components that will have access to the cart context.
  *
- * @returns {JSX.Element} The CartContext.Provider component with the cart context value.
+ * @returns The CartContext.Provider component with the cart context value.
  *
  * @example
  * ```tsx

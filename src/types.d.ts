@@ -295,6 +295,7 @@ declare global {
     children?: ReactNode;
     hoverChildren?: ReactNode;
     className?: string;
+    onClick?: () => void;
   }
 
   //#endregion

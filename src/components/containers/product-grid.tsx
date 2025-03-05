@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { GridContainer } from "../layout";
 import { ProductCard, HomeProductCard } from "../product";
 import { cn } from "@/lib/utils";
@@ -15,11 +15,11 @@ interface Props {
  * ProductGrid component renders a grid of product cards.
  *
  * @component
- * @param {Props} props - The props for the component.
- * @param {string} props.className - Additional class names for the grid container.
- * @param {string} props.variant - The variant of the product grid, either "home" or "shop".
+ * @param props - The props for the component.
+ * @param props.className - Additional class names for the grid container.
+ * @param props.variant - The variant of the product grid, either "home" or "shop".
  *
- * @returns {JSX.Element} The rendered product grid.
+ * @returns The rendered product grid.
  *
  * @example
  * <ProductGrid className="my-custom-class" variant="home" />
@@ -164,28 +164,32 @@ const ProductGrid: React.FC<Props> = ({ className, variant }) => {
     },
   ].splice(0, variant === "home" ? 4 : 8);
 
+  const cards = useMemo(() => {
+    return products.map((product) =>
+      variant === "shop" ? (
+        <ProductCard
+          key={product.id}
+          {...product}
+          addItem={addItem}
+          variant={variant}
+        />
+      ) : (
+        <HomeProductCard
+          key={product.id}
+          {...product}
+          addItem={addItem}
+          variant="home"
+          className="w-full border-1 border-hover-card"
+        />
+      )
+    );
+  }, [products, variant, addItem]);
+
   return (
     <GridContainer
       className={cn("grid-cols-1 sm:grid-cols-2 md:grid-cols-3", className)}
     >
-      {products.map((product) =>
-        variant === "shop" ? (
-          <ProductCard
-            key={product.id}
-            {...product}
-            addItem={addItem}
-            variant={variant}
-          />
-        ) : (
-          <HomeProductCard
-            key={product.id}
-            {...product}
-            addItem={addItem}
-            variant="home"
-            className="w-full border-1 border-hover-card"
-          />
-        )
-      )}
+      {cards}
     </GridContainer>
   );
 };

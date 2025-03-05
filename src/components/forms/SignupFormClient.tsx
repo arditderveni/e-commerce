@@ -9,24 +9,13 @@ import { useForm } from "react-hook-form";
  * It uses react-hook-form for form handling and validation with Zod schema.
  *
  * @component
- * @param {SignupFormProps} props - The props for the SignupFormClient component.
- * @param {function} props.onSubmit - The function to handle form submission.
+ * @param props - The props for the SignupFormClient component.
+ * @param props.onSubmit - The function to handle form submission.
  *
- * @returns {JSX.Element} The rendered signup form component.
+ * @returns The rendered signup form component.
  *
  * @example
  * <SignupFormClient onSubmit={handleSignup} />
- *
- * @typedef {Object} SignupFormProps
- * @property {function} onSubmit - The function to handle form submission.
- *
- * @typedef {Object} SignUpFormData
- * @property {string} name - The user's first name.
- * @property {string} surname - The user's surname.
- * @property {string} email - The user's email address.
- * @property {string} password - The user's password.
- * @property {string} confirmPassword - The user's password confirmation.
- * @property {Date} birthDate - The user's birth date.
  */
 const SignupFormClient: React.FC<SignupFormProps> = ({ onSubmit }) => {
   const form = useForm<SignUpFormData>({

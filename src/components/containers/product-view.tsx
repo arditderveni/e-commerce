@@ -27,10 +27,10 @@ const emptyProduct = {
  * ProductView component displays the product details and an image skeleton.
  *
  * @component
- * @param {object} props - The component props.
- * @param {string} props.className - Additional class names to style the component.
+ * @param  props - The component props.
+ * @param  props.className - Additional class names to style the component.
  *
- * @returns {JSX.Element} The rendered ProductView component.
+ * @returns The rendered ProductView component.
  *
  * @example
  * <ProductView className="custom-class" />

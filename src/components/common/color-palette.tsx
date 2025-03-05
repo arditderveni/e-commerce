@@ -11,12 +11,12 @@ import { ChevronUp } from "lucide-react";
  *
  * @component
  *
- * @param {ColorPaletteProps} props - The properties for the ColorPalette component.
- * @param {string[]} props.colors - An array of color strings to be displayed in the palette.
- * @param {string} [props.className] - An optional className to apply to the container div.
- * @param {React.Ref} [props.ref] - A ref to access the current selected color and setColor function.
+ * @param props - The properties for the ColorPalette component.
+ * @param props.colors - An array of color strings to be displayed in the palette.
+ * @param props.className - An optional className to apply to the container div.
+ * @param props.ref - A ref to access the current selected color and setColor function.
  *
- * @returns {JSX.Element} The rendered ColorPalette component.
+ * @returns The rendered ColorPalette component.
  *
  * @example
  * ```tsx

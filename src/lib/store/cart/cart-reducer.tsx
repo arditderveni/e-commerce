@@ -3,9 +3,9 @@ import { toast } from "sonner";
 /**
  * Reducer function to manage the state of the shopping cart.
  *
- * @param {CartState} state - The current state of the cart.
- * @param {CartAction} action - The action to be performed on the cart.
- * @returns {CartState} The updated state of the cart.
+ * @param state - The current state of the cart.
+ * @param action - The action to be performed on the cart.
+ * @returns The updated state of the cart.
  *
  * The reducer handles the following action types:
  * - "ADD_ITEM": Adds an item to the cart. If the item already exists, it updates the quantity.

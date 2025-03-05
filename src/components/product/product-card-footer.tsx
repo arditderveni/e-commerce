@@ -15,17 +15,17 @@ interface Props extends ProductCardProps {
  * It includes size picker, color palette, quantity button, and an add to cart button.
  *
  * @component
- * @param {Props} props - The properties object.
- * @param {string} props.name - The name of the product.
- * @param {string[]} props.sizes - The available sizes for the product.
- * @param {string} props.image - The image URL of the product.
- * @param {function} props.addItem - The function to add the item to the cart.
- * @param {string} props.id - The unique identifier of the product.
- * @param {number} props.price - The price of the product.
- * @param {string[]} props.colors - The available colors for the product.
- * @param {string} [props.className] - Additional class names for styling.
+ * @param props - The properties object.
+ * @param props.name - The name of the product.
+ * @param props.sizes - The available sizes for the product.
+ * @param props.image - The image URL of the product.
+ * @param props.addItem - The function to add the item to the cart.
+ * @param props.id - The unique identifier of the product.
+ * @param props.price - The price of the product.
+ * @param props.colors - The available colors for the product.
+ * @param props.className - Additional class names for styling.
  *
- * @returns {JSX.Element} The rendered ProductCardFooter component.
+ * @returns The rendered ProductCardFooter component.
  */
 const ProductCardFooter: React.FC<Props> = ({
   name,

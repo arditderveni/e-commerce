@@ -31,13 +31,13 @@ interface Props {
  * HeaderUser component displays the user's avatar and a dropdown menu with profile options.
  *
  * @component
- * @param {Props} props - The properties object.
- * @param {Object} props.user - The user object containing user details.
- * @param {string} props.user.avatar - The URL of the user's avatar image.
- * @param {string} props.user.name - The name of the user.
- * @param {string} props.user.email - The email of the user.
+ * @param props - The properties object.
+ * @param props.user - The user object containing user details.
+ * @param props.user.avatar - The URL of the user's avatar image.
+ * @param props.user.name - The name of the user.
+ * @param props.user.email - The email of the user.
  *
- * @returns {JSX.Element} The rendered HeaderUser component.
+ * @returns The rendered HeaderUser component.
  *
  * @example
  * <HeaderUser user={{ avatar: 'avatar_url', name: 'John Doe', email: 'john.doe@example.com' }} />

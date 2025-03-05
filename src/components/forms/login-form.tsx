@@ -12,7 +12,7 @@ const LoginFormClient = dynamic(() => import("./LoginFormClient"), {
  * This component renders a login form and handles the form submission.
  *
  * @component
- * @returns {JSX.Element} The rendered login form component.
+ * @returns The rendered login form component.
  *
  * @example
  * // Usage example:
@@ -24,7 +24,7 @@ const LoginFormClient = dynamic(() => import("./LoginFormClient"), {
  *
  * @async
  * @function onSubmit
- * @param {LoginFormData} data - The data submitted from the login form.
+ * @param data - The data submitted from the login form.
  */
 const LoginForm: React.FC = () => {
   const onSubmit = async (data: LoginFormData) => {
