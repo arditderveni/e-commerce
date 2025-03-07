@@ -25,3 +25,4 @@ export { default as Avatar } from "./avatar";
 export { default as Review } from "./review";
 export { default as ActiveFilters } from "./active-filters";
 export { default as Tooltip } from "./tooltip";
+export { default as LoadingImage } from "./loading-image";
